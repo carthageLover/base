@@ -33,6 +33,7 @@
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
       <path-element>C:\Users\porry\Documents\GitHub\base\fd4\web\src</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\fd4\web\starling</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
