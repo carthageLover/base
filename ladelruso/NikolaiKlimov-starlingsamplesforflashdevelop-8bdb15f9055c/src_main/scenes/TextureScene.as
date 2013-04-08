@@ -11,7 +11,10 @@ package scenes
             // the flight textures are actually loaded from an atlas texture.
             // the "AssetManager" class wraps it away for us.
             
-            var image1:Image = new Image(Game.assets.getTexture("ship_1"));
+           
+
+			
+			var image1:Image = new Image(Game.assets.getTexture("ship_1"));
             image1.x = 173;
             image1.y = 354;
             addChild(image1);
@@ -31,10 +34,7 @@ package scenes
             image4.y = 300;
             addChild(image4);
 
-			var image5:Image = new Image(Game.assets.getTexture("ship_5"));
-            image5.x = 20;
-            image5.y = 267;
-            addChild(image5);
+
 			
 			var image6:Image = new Image(Game.assets.getTexture("ship_6"));
             image6.x = 25;
@@ -85,6 +85,11 @@ package scenes
             image15.x = 96;
             image15.y = 361;
             addChild(image15);
+			
+			var image5:Image = new Image(Game.assets.getTexture("ship_5"));
+            image5.x = 20;
+            image5.y = 267;
+            addChild(image5);
 			
            /* try
             {

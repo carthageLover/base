@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:aba9b5eb7edffdf770e5dd3a6b783835$ -->
+<TextureAtlas imagePath="ship.png">
+    <SubTexture name="ship_1" x="322" y="297" width="36" height="47" frameX="-12" frameY="-11" frameWidth="56" frameHeight="79"/>
+    <SubTexture name="ship_10" x="311" y="143" width="73" height="63" frameX="-33" frameY="-7" frameWidth="111" frameHeight="75"/>
+    <SubTexture name="ship_11" x="359" y="2" width="29" height="67" frameX="-14" frameY="-8" frameWidth="53" frameHeight="79"/>
+    <SubTexture name="ship_12" x="179" y="296" width="88" height="76" frameX="-4" frameY="-8" frameWidth="102" frameHeight="90"/>
+    <SubTexture name="ship_13" x="179" y="2" width="178" height="139" frameX="-5" frameY="-6" frameWidth="188" frameHeight="151"/>
+    <SubTexture name="ship_14" x="276" y="213" width="36" height="90" frameX="-18" frameY="-8" frameWidth="70" frameHeight="104"/>
+    <SubTexture name="ship_15" x="179" y="143" width="130" height="68" frameX="-11" frameY="-8" frameWidth="158" frameHeight="84"/>
+    <SubTexture name="ship_2" x="2" y="2" width="175" height="282" frameX="-9" frameY="-11" frameWidth="193" frameHeight="302"/>
+    <SubTexture name="ship_3" x="314" y="208" width="73" height="50" frameX="-8" frameY="-9" frameWidth="91" frameHeight="64"/>
+    <SubTexture name="ship_4" x="179" y="213" width="95" height="81" frameX="-9" frameY="0" frameWidth="107" frameHeight="85"/>
+    <SubTexture name="ship_5" x="2" y="286" width="109" height="94" frameX="-16" frameY="-11" frameWidth="135" frameHeight="120"/>
+    <SubTexture name="ship_6" x="314" y="260" width="48" height="35" frameX="-13" frameY="0" frameWidth="72" frameHeight="59"/>
+    <SubTexture name="ship_7" x="113" y="286" width="64" height="68" frameX="-13" frameY="-18" frameWidth="96" frameHeight="108"/>
+    <SubTexture name="ship_8" x="269" y="305" width="51" height="58" frameX="-2" frameY="-11" frameWidth="65" frameHeight="74"/>
+    <SubTexture name="ship_9" x="113" y="356" width="17" height="14" frameX="-1" frameY="-1" frameWidth="19" frameHeight="16"/>
+</TextureAtlas>
