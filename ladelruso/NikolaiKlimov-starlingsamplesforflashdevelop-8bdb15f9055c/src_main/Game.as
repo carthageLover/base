@@ -42,7 +42,7 @@ public class Game extends Sprite
 		// 1) we need it right away, otherwise we have an empty frame
 		// 2) the Startup class can decide on the right image, depending on the device.
 		
-		addChild(new Image(background));
+		//addChild(new Image(background));
 		
 		// The AssetManager contains all the raw asset data, but has not created the textures
 		// yet. This takes some time (the assets might be loaded from disk or even via the

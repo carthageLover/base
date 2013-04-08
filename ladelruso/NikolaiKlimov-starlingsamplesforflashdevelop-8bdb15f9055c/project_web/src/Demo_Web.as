@@ -10,7 +10,7 @@ import starling.utils.AssetManager;
 // If you set this class as your 'default application', it will run without a preloader.
 // To use a preloader, see 'Demo_Web_Preloader.as'.
 
-[SWF(width="320",height="480",frameRate="60",backgroundColor="#222222")]
+[SWF(width="800",height="600",frameRate="60",backgroundColor="#CEECF4")]
 
 public class Demo_Web extends Sprite
 {

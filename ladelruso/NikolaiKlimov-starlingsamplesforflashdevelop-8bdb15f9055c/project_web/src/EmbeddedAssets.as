@@ -15,13 +15,19 @@ package
         
         // Texture Atlas
         
-        [Embed(source="../../assets/textures/1x/atlas.xml", mimeType="application/octet-stream")]
+       [Embed(source="../../assets/textures/1x/atlas.xml", mimeType="application/octet-stream")]
         public static const atlas_xml:Class;
         
         [Embed(source="../../assets/textures/1x/atlas.png")]
         public static const atlas:Class;
 
-        // Compressed textures
+		[Embed(source="../../assets/textures/3x/shipbitmap.xml", mimeType="application/octet-stream")]
+        public static const shipbitmap_xml:Class;
+        
+        [Embed(source="../../assets/textures/3x/shipbitmap.png")]
+        public static const shipbitmap:Class;
+        
+		// Compressed textures
         
         [Embed(source = "../../assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
         public static const compressed_texture:Class;

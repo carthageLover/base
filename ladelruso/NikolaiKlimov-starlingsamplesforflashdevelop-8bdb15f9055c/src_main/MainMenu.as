@@ -35,7 +35,7 @@ public class MainMenu extends Sprite
 		var logo:Image = new Image(Game.assets.getTexture("logo"));
 		addChild(logo);
 		
-		var scenesToCreate:Array = [["Textures1", TextureScene], ["Multitouch", TouchScene], ["TextFields", TextScene], ["Animations", AnimationScene], ["Custom hit-test", CustomHitTestScene], ["Movie Clip", MovieScene], ["Filters", FilterScene], ["Blend Modes", BlendModeScene], ["Render Texture", RenderTextureScene], ["Benchmark", BenchmarkScene]];
+		var scenesToCreate:Array = [["ShipTexture", TextureScene],["Textures1", TextureScene], ["Multitouch", TouchScene], ["TextFields", TextScene], ["Animations", AnimationScene], ["Custom hit-test", CustomHitTestScene], ["Movie Clip", MovieScene], ["Filters", FilterScene], ["Blend Modes", BlendModeScene], ["Render Texture", RenderTextureScene], ["Benchmark", BenchmarkScene]];
 		
 		var buttonTexture:Texture = Game.assets.getTexture("button_big");
 		var count:int = 0;
