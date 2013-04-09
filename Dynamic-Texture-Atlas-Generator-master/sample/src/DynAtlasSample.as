@@ -3,7 +3,6 @@ package {
 	import com.emibap.textureAtlas.DynamicAtlas;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-	import flash.display.SpreadMethod;
 	import flash.text.Font;
 	import flash.utils.getTimer;
 	import flash.utils.setTimeout;
@@ -20,7 +19,7 @@ package {
 	import starling.textures.TextureAtlas;
 	import starling.display.Sprite;
 
-	public class DynAtlasSample extends flash.display.Sprite{
+	public class DynAtlasSample extends Sprite{
 		
 		public function DynAtlasSample(){
 			super();

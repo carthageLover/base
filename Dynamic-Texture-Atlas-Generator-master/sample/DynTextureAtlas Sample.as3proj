@@ -18,7 +18,6 @@
   <classpaths>
     <class path="src" />
     <class path="..\dynamicTextureAtlasGenerator\src" />
-    <class path="..\..\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_lib\starling" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -43,18 +42,18 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="‐swf‐version=17" />
+    <option additional="" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
   <!-- SWC Include Libraries -->
   <includeLibraries>
-    <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs" />
-    <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0" />
+    <!-- example: <element path="..." /> -->
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
     <element path="lib\sample_for_atlas.swc" />
+    <element path="lib\starling.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
