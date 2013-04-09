@@ -52,7 +52,8 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <!-- example: <element path="..." /> -->
+    <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs" />
+    <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
