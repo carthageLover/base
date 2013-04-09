@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-16"?>
+
+<TextureAtlas imagePath="bandera.png">
+
+	<!-- Created with Adobe Flash CS6 version 12.0.0.481 -->
+
+	<!-- http://www.adobe.com/products/flash.html -->
+
+	<SubTexture name="bandera_10000" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10001" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10002" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10003" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10004" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10005" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10006" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10007" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10008" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10009" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10010" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10011" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10012" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10013" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10014" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10015" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10016" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10017" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10018" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10019" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10020" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10021" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10022" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10023" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10024" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10025" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10026" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10027" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10028" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10029" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10030" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10031" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10032" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10033" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10034" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10035" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10036" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10037" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10038" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10039" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10040" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10041" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10042" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10043" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10044" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10045" x="246" y="635" width="221" height="296" frameX="-35" frameY="-8" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10046" x="0" y="631" width="246" height="289" frameX="-22" frameY="-16" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10047" x="0" y="350" width="268" height="281" frameX="-11" frameY="-24" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10048" x="283" y="329" width="272" height="306" frameX="-8" frameY="-16" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10049" x="283" y="0" width="277" height="329" frameX="-4" frameY="-9" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10050" x="0" y="0" width="283" height="350" frameX="0" frameY="-3" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10051" x="560" y="0" width="263" height="341" frameX="-11" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10052" x="555" y="341" width="241" height="330" frameX="-23" frameY="0" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10053" x="796" y="341" width="219" height="317" frameX="-35" frameY="0" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10054" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10055" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10056" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10057" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10058" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10059" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10060" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10061" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10062" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10063" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10064" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10065" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10066" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10067" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10068" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10069" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10070" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10071" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10072" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10073" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10074" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10075" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10076" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10077" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10078" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10079" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10080" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10081" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10082" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10083" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10084" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10085" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10086" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10087" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10088" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10089" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10090" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10091" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10092" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10093" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10094" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10095" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10096" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10097" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10098" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10099" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10100" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10101" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10102" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10103" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10104" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10105" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10106" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10107" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10108" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10109" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10110" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10111" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10112" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10113" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10114" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10115" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+	<SubTexture name="bandera_10116" x="823" y="0" width="193" height="302" frameX="-49" frameY="-1" frameWidth="283" frameHeight="353"/>
+
+</TextureAtlas>
+

@@ -20,18 +20,24 @@ package
         
         [Embed(source="../../assets/textures/1x/atlas.png")]
         public static const atlas:Class;
-/*
+
 		[Embed(source="../../assets/textures/3x/shipbitmap.xml", mimeType="application/octet-stream")]
         public static const shipbitmap_xml:Class;
         
         [Embed(source="../../assets/textures/3x/shipbitmap.png")]
         public static const shipbitmap:Class;
-       /*/
+       
 		[Embed(source="../../assets/textures/5x/ship.xml", mimeType="application/octet-stream")]
         public static const ship_xml:Class;
         
         [Embed(source="../../assets/textures/5x/ship.png")]
         public static const ship:Class;
+
+		[Embed(source="../../assets/textures/6x/bandera.xml", mimeType="application/octet-stream")]
+        public static const bandera_xml:Class;
+        
+        [Embed(source="../../assets/textures/6x/bandera.png")]
+        public static const bandera:Class;
 		
 		// Compressed textures
         
