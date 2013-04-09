@@ -54,6 +54,7 @@
   <libraryPaths>
     <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs" />
     <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0" />
+    <element path="..\src_lib\libs\as3-signals-v0.8.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

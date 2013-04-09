@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'08/04/2013'</value>
+      <value>'4/9/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -32,18 +32,19 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src</path-element>
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_main</path-element>
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_lib</path-element>
-      <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_main</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_lib</path-element>
+      <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
       <path-element>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs</path-element>
       <path-element>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_lib\libs\as3-signals-v0.8.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src\Demo_Web.as</path-element>
+    <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src\Demo_Web.as</path-element>
   </file-specs>
   <default-background-color>#FF8000</default-background-color>
   <default-frame-rate>60</default-frame-rate>

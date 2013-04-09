@@ -9,7 +9,7 @@
     <SubTexture name="ship_13" x="179" y="2" width="178" height="139" frameX="-5" frameY="-6" frameWidth="188" frameHeight="151"/>
     <SubTexture name="ship_14" x="290" y="287" width="40" height="90" frameX="-15" frameY="-9" frameWidth="70" frameHeight="104"/>
     <SubTexture name="ship_15" x="2" y="286" width="142" height="64" frameX="-10" frameY="-12" frameWidth="158" frameHeight="84"/>
-    <SubTexture name="ship_2" x="2" y="2" width="175" height="282" frameX="-9" frameY="-11" frameWidth="193" frameHeight="302"/>
+    <SubTexture name="bandera/bandera" x="2" y="2" width="175" height="282" frameX="-9" frameY="-11" frameWidth="193" frameHeight="302"/>
     <SubTexture name="ship_3" x="221" y="326" width="67" height="40" frameX="-12" frameY="-11" frameWidth="91" frameHeight="64"/>
     <SubTexture name="ship_4" x="179" y="257" width="95" height="67" frameX="-3" frameY="-10" frameWidth="107" frameHeight="85"/>
     <SubTexture name="ship_5" x="179" y="143" width="109" height="112" frameX="-10" frameY="-8" frameWidth="135" frameHeight="120"/>

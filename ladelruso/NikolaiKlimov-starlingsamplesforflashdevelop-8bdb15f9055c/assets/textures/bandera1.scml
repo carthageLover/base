@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="a4.1">
+    <folder id="0">
+        <file id="0" name="bandera.png" width="0" height="0"/>
+    </folder>
+    <entity id="0" name="">
+        <animation id="0" name="fall" length="1000" looping="true">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="20">
+                    <object_ref id="0" timeline="2" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="30">
+                    <object_ref id="0" timeline="2" key="2" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0"/>
+            <timeline id="1"/>
+            <timeline id="2">
+                <key id="0" spin="-1">
+                    <object folder="0" file="0" x="-144" y="189"/>
+                </key>
+                <key id="1" time="20" spin="-1">
+                    <object folder="0" file="0" x="-82" y="188" angle="347.471192"/>
+                </key>
+                <key id="2" time="30">
+                    <object folder="0" file="0" x="2" y="157" angle="336.01208"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

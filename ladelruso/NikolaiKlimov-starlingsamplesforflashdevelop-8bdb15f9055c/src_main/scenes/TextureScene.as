@@ -1,9 +1,10 @@
 package scenes
 {
-	import fl.motion.AnimatorFactory;
+	/*import fl.motion.AnimatorFactory;
 	import fl.motion.Motion;
-	import fl.motion.MotionBase;
+	import fl.motion.MotionBase;*/
 	import flash.geom.Point;
+	import flashx.textLayout.formats.Float;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
 	import starling.core.Starling;
@@ -13,40 +14,59 @@ package scenes
 	import starling.events.Event;
     import starling.text.TextField;
     import starling.textures.Texture;
+	import starling.textures.TextureAtlas;
+	import treefortress.spriter.AnimationSet;
 	
-
+	import treefortress.spriter.SpriterClip;
+	import treefortress.spriter.SpriterLoader;
+	
+			
 
     public class TextureScene extends Scene
     {
+		
+		[Embed(source="../../assets/textures/4x/ship.scml", mimeType="application/octet-stream")]
+	   public static const OrcScml:Class;
+		
+		[Embed(source="../../assets/textures/4x/ship.xml", mimeType="application/octet-stream")]
+	   public static const TexturePackerXml:Class;
+		
+		[Embed(source="../../assets/textures/4x/ship.png")]
+	   public static const TexturePackerBitmap:Class;
+	   
 		private var mMovie:MovieClip;
 		private var barco:Sprite;
 		
-		private var xVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1.275,-2.55,-3.825,-2.63333,-1.44167,-0.25,-0.1875,-0.125,-0.0625,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		protected var brawler:SpriterClip;
+		protected var spriterLoader:SpriterLoader;
+		
+	/*	private var xVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1.275,-2.55,-3.825,-2.63333,-1.44167,-0.25,-0.1875,-0.125,-0.0625,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		private var yVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8.70833,17.4167,26.125,21.7,17.275,12.85,9.6375,6.425,3.2125,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         private var scaleXVect:Array = [1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.037800,1.075600,1.113400,1.075600,1.037800,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000];
 		private var scaleYVect:Array = [1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,0.950943,0.901886,0.852829,0.901886,0.950943,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000];
 		private var skewXVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.913203,1.82641,2.73961,1.82641,0.913203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		private var skewYVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.675233,-1.35047,-2.0257,-1.35047,-0.675233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 		private var rotationVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.2463,6.4926,9.7389,12.9852,16.2315,19.4778,14.6083,9.7389,4.86945,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-		private var tween:Tween; 
+		private var tween:Tween; */
 		private var image2:Image;
+		
+		private var i:int = 0;
         public function TextureScene()
         {
             // the flight textures are actually loaded from an atlas texture.
             // the "AssetManager" class wraps it away for us.
             
 			barco = new Sprite();
-			
-			
+						
 			var image1:Image = new Image(Game.assets.getTexture("ship_1"));
             image1.x = 173;
             image1.y = 354;
             barco.addChild(image1);
             
-            image2 = new Image(Game.assets.getTexture("ship_2"));
+           /* image2 = new Image(Game.assets.getTexture("ship_2"));
             image2.x = 5;
             image2.y = 45;
-            barco.addChild(image2);
+            barco.addChild(image2);*/
             
             var image3:Image = new Image(Game.assets.getTexture("ship_3"));
             image3.x = 150;
@@ -114,8 +134,27 @@ package scenes
             barco.addChild(image5);
 			
 			addChild(barco);
+			
+			
+			
+			//Create TexturePacker Atlas
+			var atlas:TextureAtlas = new TextureAtlas(Texture.fromBitmap(new TexturePackerBitmap()), new XML(new TexturePackerXml()));
+			//Create Animation (note that with texturePacker, you must pass the parentFolder ("orc/") into the AnimationSet
+			var animation:AnimationSet = new AnimationSet(XML(new OrcScml()), 1, "bandera");
+			//Create Character
+			createSriterClip(animation, atlas);
+			
+			
+			//var textureScale:Number = 1;
+				
+			//Use the SpriterLoader class to load individual SCML files, generate a TextureAtlas, and create AnimationSets, all at once.
+			//spriterLoader = new SpriterLoader();
+		//	spriterLoader.completed.addOnce(onSpriterLoaderComplete);
+		//	spriterLoader.load(["../../assets/textures/bandera.scml"], textureScale);
+			
+			
 		
-			tween = new Tween(image2,1/15);
+			//tween = new Tween(image2,1/15);
 			
 			//tween.animate("rotation", deg2rad(90)); // conventional 'animate' call
            // tween.moveTo(0, 30);                 // convenience method for animating 'x' and 'y'
@@ -132,18 +171,17 @@ package scenes
 		/*	tween.animate("x", xVect[i]);
 			tween.animate("y", yVect[i]);*/
 			
-			var i:int = 0;
+			/*
 			tween.moveTo( xVect[i], yVect[i]);
-			tween.scaleTo(scaleXVect[i]);
-			tween.scaleTo(scaleYVect[i]);
+			tween.animate("scaleX",scaleXVect[i]);
+			tween.animate("scaleY",scaleYVect[i]);
 			tween.animate("skewX", skewXVect[i]);
 			tween.animate("skewY", skewYVect[i]);
 			tween.animate("rotation", deg2rad(rotationVect[i]));
 			tween.onComplete = animalo;
-			tween.onCompleteArgs = [1];
-			
-			
-			  Starling.juggler.add(tween);
+			//	tween.onCompleteArgs = [1];
+
+			Starling.juggler.add(tween);
 			//}
             // the tween alone is useless -- for an animation to be carried out, it has to be 
             // advance once in every frame.            
@@ -192,21 +230,64 @@ package scenes
                 addChild(textField);
             }*/
         }
-		
-		private function animalo(i:int):void 
+		/*
+		private function animalo():void 
 		{
-			var tween:Tween = new Tween(image2,1/15);
-			/*tween.moveTo( xVect[i], yVect[i]);
-			tween.scaleTo(scaleXVect[i]);
-			tween.scaleTo(scaleYVect[i]);
+			var tween:Tween = new Tween(image2,1/30);
+			tween.moveTo( xVect[i], yVect[i]);
+			tween.animate("scaleX",scaleXVect[i]);
+			tween.animate("scaleY",scaleYVect[i]);
 			tween.animate("skewX", skewXVect[i]);
-			tween.animate("skewY", skewYVect[i]);*/
+			tween.animate("skewY", skewYVect[i]);
 			tween.animate("rotation", deg2rad(rotationVect[i]));
 			tween.onComplete = animalo;
-			tween.onCompleteArgs = [i++];
+		//	tween.onCompleteArgs = [i++];
+			trace("i:" + i.toString());	
 			
+			Starling.juggler.add(tween);
+			i++;
+		}
+		*/
+		
+		protected function createSriterClip(animation:AnimationSet, atlas:TextureAtlas):void {
+			//Create Character
+			var orc:SpriterClip = new SpriterClip(animation, atlas); 
+			orc.play("fall");
+			orc.scaleX = orc.scaleY = 1;
+			orc.x = 100;
+			orc.y = 200;
+			addChild(orc);
+			Starling.juggler.add(orc);
+		}	
+		
+		protected function onSpriterLoaderComplete(loader:SpriterLoader):void {
 			
-			  Starling.juggler.add(tween);
+			//Add Orc 1
+			/*orc = spriterLoader.getSpriterClip("bandera");
+			orc.play("fall", 0);
+			orc.scaleX = -1;
+			orc.y = 50;
+			orc.x = 300;
+			orc.playbackSpeed = 1;
+			addChild(orc);*/
+			
+			//For performance reasons, SpriterClips will not update themselves, they must externally ticked each frame. 
+			//The Starling Juggler is a simple way to do that.
+			//Starling.juggler.add(orc);
+			
+			//Add a "Brawler"
+			brawler = spriterLoader.getSpriterClip("bandera");
+			brawler.setPosition(200, 200);
+			brawler.play("fall");
+			addChild(brawler);
+			Starling.juggler.add(brawler);
+			
+			//Add Touch Support to each Sprite
+			//orc.touchable = true;
+			//orc.addEventListener(TouchEvent.TOUCH, onCharacterTouched);
+			//brawler.touchable = true;
+			//brawler.addEventListener(TouchEvent.TOUCH, onCharacterTouched);
+			
 		}
 		
 		function deg2rad(degree) {

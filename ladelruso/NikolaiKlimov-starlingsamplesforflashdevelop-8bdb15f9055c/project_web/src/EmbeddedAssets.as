@@ -41,9 +41,10 @@ package
 		
 		// Compressed textures
         
-        [Embed(source = "../../assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
-        public static const compressed_texture:Class;
-        
+       [Embed(source = "../../assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
+       public static const compressed_texture:Class;
+      
+
         // Bitmap Fonts
         
         [Embed(source="../../assets/fonts/1x/desyrel.fnt", mimeType="application/octet-stream")]
