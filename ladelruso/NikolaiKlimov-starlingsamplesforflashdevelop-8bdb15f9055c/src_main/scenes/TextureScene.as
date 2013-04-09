@@ -21,6 +21,15 @@ package scenes
 		private var mMovie:MovieClip;
 		private var barco:Sprite;
 		
+		private var xVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1.275,-2.55,-3.825,-2.63333,-1.44167,-0.25,-0.1875,-0.125,-0.0625,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		private var yVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8.70833,17.4167,26.125,21.7,17.275,12.85,9.6375,6.425,3.2125,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        private var scaleXVect:Array = [1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.037800,1.075600,1.113400,1.075600,1.037800,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000];
+		private var scaleYVect:Array = [1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,0.950943,0.901886,0.852829,0.901886,0.950943,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000];
+		private var skewXVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.913203,1.82641,2.73961,1.82641,0.913203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		private var skewYVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.675233,-1.35047,-2.0257,-1.35047,-0.675233,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		private var rotationVect:Array = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.2463,6.4926,9.7389,12.9852,16.2315,19.4778,14.6083,9.7389,4.86945,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+		private var tween:Tween; 
+		private var image2:Image;
         public function TextureScene()
         {
             // the flight textures are actually loaded from an atlas texture.
@@ -34,7 +43,7 @@ package scenes
             image1.y = 354;
             barco.addChild(image1);
             
-            var image2:Image = new Image(Game.assets.getTexture("ship_2"));
+            image2 = new Image(Game.assets.getTexture("ship_2"));
             image2.x = 5;
             image2.y = 45;
             barco.addChild(image2);
@@ -106,19 +115,42 @@ package scenes
 			
 			addChild(barco);
 		
-			var tween:Tween = new Tween(barco, 6.0,Transitions.EASE_IN_OUT_ELASTIC);
+			tween = new Tween(image2,1/15);
 			
 			//tween.animate("rotation", deg2rad(90)); // conventional 'animate' call
-            tween.moveTo(0, 30);                 // convenience method for animating 'x' and 'y'
+           // tween.moveTo(0, 30);                 // convenience method for animating 'x' and 'y'
            // tween.scaleTo(0.5);                     // convenience method for 'scaleX' and 'scaleY'
            // tween.onComplete = function():void { mStartButton.enabled = true; };
-            
+           // tween.animate("skewX", 0.913203);
+			//tween.animate("skewY", -0.675233);
+			//tween.animate("rotation", 3.2);
+			
+		
+			//trace("xvect " + xVect[0]);
+			//for (var i:int = 0; i < xVect.length; i++ )
+		//	{
+		/*	tween.animate("x", xVect[i]);
+			tween.animate("y", yVect[i]);*/
+			
+			var i:int = 0;
+			tween.moveTo( xVect[i], yVect[i]);
+			tween.scaleTo(scaleXVect[i]);
+			tween.scaleTo(scaleYVect[i]);
+			tween.animate("skewX", skewXVect[i]);
+			tween.animate("skewY", skewYVect[i]);
+			tween.animate("rotation", deg2rad(rotationVect[i]));
+			tween.onComplete = animalo;
+			tween.onCompleteArgs = [1];
+			
+			
+			  Starling.juggler.add(tween);
+			//}
             // the tween alone is useless -- for an animation to be carried out, it has to be 
             // advance once in every frame.            
             // This is done by the 'Juggler'. It receives the tween and will carry it out.
             // We use the default juggler here, but you can create your own jugglers, as well.            
             // That way, you can group animations into logical parts.  
-            Starling.juggler.add(tween);
+          
             
 			
 			/*
@@ -160,6 +192,26 @@ package scenes
                 addChild(textField);
             }*/
         }
+		
+		private function animalo(i:int):void 
+		{
+			var tween:Tween = new Tween(image2,1/15);
+			/*tween.moveTo( xVect[i], yVect[i]);
+			tween.scaleTo(scaleXVect[i]);
+			tween.scaleTo(scaleYVect[i]);
+			tween.animate("skewX", skewXVect[i]);
+			tween.animate("skewY", skewYVect[i]);*/
+			tween.animate("rotation", deg2rad(rotationVect[i]));
+			tween.onComplete = animalo;
+			tween.onCompleteArgs = [i++];
+			
+			
+			  Starling.juggler.add(tween);
+		}
+		
+		function deg2rad(degree) {
+			return degree * (Math.PI / 180);
+		}
 		
         private function onAddedToStage():void
         {
