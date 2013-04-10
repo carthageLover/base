@@ -8,15 +8,15 @@
   <compiler>
     <define append="true">
       <name>CONFIG::debug</name>
-      <value>false</value>
-    </define>
-    <define append="true">
-      <name>CONFIG::release</name>
       <value>true</value>
     </define>
     <define append="true">
+      <name>CONFIG::release</name>
+      <value>false</value>
+    </define>
+    <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'09/04/2013'</value>
+      <value>'4/9/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -30,21 +30,26 @@
       <name>CONFIG::desktop</name>
       <value>false</value>
     </define>
-    <optimize>true</optimize>
-    <omit-trace-statements>true</omit-trace-statements>
-    <verbose-stacktraces>false</verbose-stacktraces>
+    <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\Dynamic-Texture-Atlas-Generator-masterMD\sample\src</path-element>
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\Dynamic-Texture-Atlas-Generator-masterMD\dynamicTextureAtlasGenerator\src</path-element>
-      <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\Dynamic-Texture-Atlas-Generator-master\sample\src</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\Dynamic-Texture-Atlas-Generator-master\dynamicTextureAtlasGenerator\src</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\src_lib\starling</path-element>
+      <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
+    <include-libraries>
+      <library>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\flash.swc</library>
+      <library>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\ik.swc</library>
+      <library>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\PffLib.swc</library>
+      <library>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\tlfruntime.swc</library>
+      <library>C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0\textLayout.swc</library>
+    </include-libraries>
     <library-path append="true">
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\Dynamic-Texture-Atlas-Generator-masterMD\sample\lib\sample_for_atlas.swc</path-element>
-      <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\Dynamic-Texture-Atlas-Generator-masterMD\sample\lib\starling.swc</path-element>
+      <path-element>C:\Users\porry\Documents\GitHub\base\Dynamic-Texture-Atlas-Generator-master\sample\lib\sample_for_atlas.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>D:\Marco\programacionJuegos\trabajos\quizdom\base en github-calcus\Dynamic-Texture-Atlas-Generator-masterMD\sample\src\Startup.as</path-element>
+    <path-element>C:\Users\porry\Documents\GitHub\base\Dynamic-Texture-Atlas-Generator-master\sample\src\Startup.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>60</default-frame-rate>

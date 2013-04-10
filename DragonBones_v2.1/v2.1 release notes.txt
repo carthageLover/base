@@ -1,0 +1,14 @@
+April 8, 2013. Welcome to DragonBones v2.1
+V2.1 is incremental version of V2.0, including high priority bug fixing and documentation.
+
+Bug Fixing
+Fix bug: sometimes DesignPanel cannot correctly launched.
+Fix bug: in Flash Pro, graphic's Brush width will be cut out of texture.
+Fix bug: export texture with zoom in scale will make the image blur.
+Fix bug: sometimes, tween from invisible to visible is incorrect.
+
+Documentation
+Updated API Spec
+Updated Tutorials.
+
+Please see details at https://github.com/DragonBones/SkeletonAnimationLibrary/wiki/2.1-release-notes
