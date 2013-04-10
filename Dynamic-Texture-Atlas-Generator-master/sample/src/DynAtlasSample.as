@@ -27,10 +27,44 @@ package {
 		}
 		
 		private function init():void {
-			addClipsFromContainer();
-			addTextFields();
-			
+			addClipsFromContainer2();
+			//addClipsFromContainer();
+			//addTextFields();
 		}
+		
+		private function addClipsFromContainer2():void 
+		{
+			//try {
+				var mc:SheetMC = new SheetMC();
+				var t1:uint = getTimer();
+				var atlas:TextureAtlas = DynamicAtlas.fromMovieClipContainer(mc, 1, 0, true, true);
+				var total:uint = getTimer() - t1;
+				trace("atlas:", atlas);
+				trace(total, "msecs elapsed while converting...");
+				
+				//var boy_mc:MovieClip = new MovieClip(atlas.getTextures("vela"), 60);
+				//boy_mc.x = boy_mc.y = 10;
+				//addChild(boy_mc);
+				//Starling.juggler.add(boy_mc);
+				
+				var mcShipPart:MovieClip = new MovieClip(atlas.getTextures("vela"), 60);
+				addChild(mcShipPart);
+				Starling.juggler.add(mcShipPart);
+				//mcShipPart.play();
+				
+				/*for (var i:int = 1; i < 6; i++) 
+				{
+					var mcShipPart:MovieClip = new MovieClip(atlas.getTextures("ship_"+i.toString()), 60);
+					addChild(mcShipPart);
+					Starling.juggler.add(mcShipPart);
+					mcShipPart.play();
+				}*/
+				
+			//} catch (e:Error) {
+				//trace("There was an error in the creation of the texture Atlas. Please check if the dimensions of your clip exceeded the maximun allowed texture size. -", e.message);
+			//}
+		}
+		
 		
 		/**
 		 * This method creates a Dynamic Atlas from a MovieClip Container and adds some Display Objects to the starling stage
@@ -68,7 +102,7 @@ package {
 		 * For this method to work, you need to have the following fonts installed and embedded into a swc (Class names are defined inside the sample_for_atlas.fla file):
 		 * - Verdana
 		 * - Comic Sans
-		 */
+		 * /
 		private function addTextFields():void 
 		{
 			try {
@@ -110,6 +144,6 @@ package {
 			} catch (e:Error) {
 				trace("There was an error in the creation of one of the Bitmap Fonts. Please check if the dimensions of your clip exceeded the maximun allowed texture size. -", e.message);
 			}
-		}
+		}*/
 	}
 }
