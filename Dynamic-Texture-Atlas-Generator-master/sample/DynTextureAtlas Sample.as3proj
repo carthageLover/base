@@ -52,8 +52,8 @@
   </includeLibraries>
   <!-- SWC Libraries -->
   <libraryPaths>
-    <element path="lib\sample_for_atlas.swc" />
     <element path="lib\starling.swc" />
+    <element path="lib\ship.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
