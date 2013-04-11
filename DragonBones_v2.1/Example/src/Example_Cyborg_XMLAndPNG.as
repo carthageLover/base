@@ -44,13 +44,16 @@ package  {
 					break;
 				case 83 :
 				case 40 :
-					StarlingGame.instance.squat(e.type == KeyboardEvent.KEY_DOWN);
+					//StarlingGame.instance.squat(e.type == KeyboardEvent.KEY_DOWN);
+					if (e.type == KeyboardEvent.KEY_DOWN) {
+						StarlingGame.instance.breakFlag();
+					}					
 					break;
-				case 32 :
-					if (e.type == KeyboardEvent.KEY_UP) {
-						StarlingGame.instance.changeWeapon();
-					}
-					break;
+//				case 32 :
+//					if (e.type == KeyboardEvent.KEY_UP) {
+//						StarlingGame.instance.changeWeapon();
+//					}
+//					break;
 			}
 		}
 
@@ -87,13 +90,13 @@ import dragonBones.objects.SkeletonData;
 import dragonBones.textures.StarlingTextureAtlas;
 
 class StarlingGame extends Sprite {
-	[Embed(source = "../assets/Cyborg_output/skeleton.xml", mimeType = "application/octet-stream")]
+	[Embed(source = "../assets/ship_output/skeleton.xml", mimeType = "application/octet-stream")]
 	public static const SkeletonXMLData:Class;
 	
-	[Embed(source = "../assets/Cyborg_output/texture.xml", mimeType = "application/octet-stream")]
+	[Embed(source = "../assets/ship_output/texture.xml", mimeType = "application/octet-stream")]
 	public static const TextureXMLData:Class;
 	
-	[Embed(source = "../assets/Cyborg_output/texture.png")]
+	[Embed(source = "../assets/ship_output/texture.png")]
 	public static const TextureData:Class;
 
 	public static var instance:StarlingGame;
@@ -119,13 +122,13 @@ class StarlingGame extends Sprite {
 		);
 		factory.addTextureAtlas(textureAtlas);
 		
-		armature = factory.buildArmature("cyborg");
+		armature = factory.buildArmature("casco");
 		armatureClip = armature.display as Sprite;
-		armatureClip.x = 400;
-		armatureClip.y = 500;
+		armatureClip.x = 200;//400;
+		armatureClip.y = 40;// 500;
 		addChild(armatureClip);
 		WorldClock.clock.add(armature);
-		changeWeapon();
+		//changeWeapon();
 		addEventListener(EnterFrameEvent.ENTER_FRAME, onEnterFrameHandler);
 		
 		textField = new TextField(700, 30, "Press W/A/S/D to move. Press SPACE to switch weapens. Move mouse to aim.", "Verdana", 16, 0, true)
@@ -141,11 +144,11 @@ class StarlingGame extends Sprite {
 	}
 
 	private function onEnterFrameHandler(_e:EnterFrameEvent):void {
-		if (stage && !stage.hasEventListener(TouchEvent.TOUCH)) {
-			stage.addEventListener(TouchEvent.TOUCH, onMouseMoveHandler);
-		}
-		updateSpeed();
-		updateWeapon();
+		//if (stage && !stage.hasEventListener(TouchEvent.TOUCH)) {
+		//	stage.addEventListener(TouchEvent.TOUCH, onMouseMoveHandler);
+		//}
+		//updateSpeed();
+		//updateWeapon();
 		WorldClock.clock.advanceTime(-1);
 	}
 
@@ -175,7 +178,7 @@ class StarlingGame extends Sprite {
 		}
 		speedY = -20;
 		isJumping = true;
-		armature.animation.gotoAndPlay("jump");
+		armature.animation.gotoAndPlay("break");
 	}
 
 	public function squat(_isDown:Boolean):void {
@@ -185,6 +188,11 @@ class StarlingGame extends Sprite {
 		isSquat = _isDown;
 		updateMovement();
 	}
+	
+	public function breakFlag():void {
+		var flag:Bone = armature.getBone("ship_2");
+		//flag.childArmature.animation.gotoAndPlay("break");
+	}	
 
 	public function changeWeapon():void {
 		weaponID ++;
