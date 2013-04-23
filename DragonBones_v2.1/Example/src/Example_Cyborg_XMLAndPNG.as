@@ -25,32 +25,50 @@ package  {
 		private var right:Boolean;
 
 		private function onKeyEventHandler(e:KeyboardEvent):void {
+			trace(e.keyCode );
 			switch (e.keyCode) {
 				case 37 :
-				case 65 :
-					left = e.type == KeyboardEvent.KEY_DOWN;
-					updateMove(-1);
+				case 98 :
+					//left = e.type == KeyboardEvent.KEY_DOWN;
+					//updateMove(-1);
+					StarlingGame.instance.cannon2();
 					break;
+				case 99 :
+					//left = e.type == KeyboardEvent.KEY_DOWN;
+					//updateMove(-1);
+					StarlingGame.instance.cannon3();
+					break;	
+				case 100 :
+					//left = e.type == KeyboardEvent.KEY_DOWN;
+					//updateMove(-1);
+					StarlingGame.instance.cannon4();
+					break;	
+				case 101 :
+					//left = e.type == KeyboardEvent.KEY_DOWN;
+					//updateMove(-1);
+					StarlingGame.instance.cannon5();
+					break;	
 				case 39 :
 				case 68 :
 					right = e.type == KeyboardEvent.KEY_DOWN;
 					updateMove(1);
 					break;
 				case 38 :
-				case 87 :
-					if (e.type == KeyboardEvent.KEY_DOWN) {
-						StarlingGame.instance.jump();
-					}
+				case 97 :
+					//if (e.type == KeyboardEvent.KEY_DOWN) {
+						StarlingGame.instance.cannon1();
+						
+					//}
 					break;
 				case 83 :
 				case 40 :
 					StarlingGame.instance.squat(e.type == KeyboardEvent.KEY_DOWN);
 					break;
-				case 32 :
+				/*case 32 :
 					if (e.type == KeyboardEvent.KEY_UP) {
 						StarlingGame.instance.changeWeapon();
 					}
-					break;
+					break;*/
 			}
 		}
 
@@ -87,13 +105,13 @@ import dragonBones.objects.SkeletonData;
 import dragonBones.textures.StarlingTextureAtlas;
 
 class StarlingGame extends Sprite {
-	[Embed(source = "../assets/Cyborg_output/skeleton.xml", mimeType = "application/octet-stream")]
+	[Embed(source = "../assets/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 	public static const SkeletonXMLData:Class;
 	
-	[Embed(source = "../assets/Cyborg_output/texture.xml", mimeType = "application/octet-stream")]
+	[Embed(source = "../assets/ship_rod/texture.xml", mimeType = "application/octet-stream")]
 	public static const TextureXMLData:Class;
 	
-	[Embed(source = "../assets/Cyborg_output/texture.png")]
+	[Embed(source = "../assets/ship_rod/texture.png")]
 	public static const TextureData:Class;
 
 	public static var instance:StarlingGame;
@@ -119,16 +137,16 @@ class StarlingGame extends Sprite {
 		);
 		factory.addTextureAtlas(textureAtlas);
 		
-		armature = factory.buildArmature("cyborg");
+		armature = factory.buildArmature("masterShip");
 		armatureClip = armature.display as Sprite;
-		armatureClip.x = 400;
-		armatureClip.y = 500;
+		armatureClip.x = 0;
+		armatureClip.y = 0;
 		addChild(armatureClip);
 		WorldClock.clock.add(armature);
-		changeWeapon();
+		//changeWeapon();
 		addEventListener(EnterFrameEvent.ENTER_FRAME, onEnterFrameHandler);
 		
-		textField = new TextField(700, 30, "Press W/A/S/D to move. Press SPACE to switch weapens. Move mouse to aim.", "Verdana", 16, 0, true)
+		textField = new TextField(700, 30, "Usen las teclas del 1 al 5 (teclado numerico)", "Verdana", 16, 0, true)
 		textField.x = 60;
 		textField.y = 5;
 		addChild(textField);
@@ -141,11 +159,11 @@ class StarlingGame extends Sprite {
 	}
 
 	private function onEnterFrameHandler(_e:EnterFrameEvent):void {
-		if (stage && !stage.hasEventListener(TouchEvent.TOUCH)) {
+		/*if (stage && !stage.hasEventListener(TouchEvent.TOUCH)) {
 			stage.addEventListener(TouchEvent.TOUCH, onMouseMoveHandler);
-		}
-		updateSpeed();
-		updateWeapon();
+		}*/
+		//updateSpeed();
+		//updateWeapon();
 		WorldClock.clock.advanceTime(-1);
 	}
 
@@ -169,15 +187,51 @@ class StarlingGame extends Sprite {
 		updateMovement();
 	}
 
-	public function jump():void {
-		if (isJumping) {
+	public function cannon1():void {
+		/*if (isJumping) {
 			return;
 		}
 		speedY = -20;
-		isJumping = true;
-		armature.animation.gotoAndPlay("jump");
+		isJumping = true;*/
+		armature.animation.gotoAndPlay("cannon1");
 	}
-
+	
+	public function cannon2():void {
+		/*if (isJumping) {
+			return;
+		}
+		speedY = -20;
+		isJumping = true;*/
+		armature.animation.gotoAndPlay("cannon2");
+	}
+	
+	public function cannon3():void {
+		/*if (isJumping) {
+			return;
+		}
+		speedY = -20;
+		isJumping = true;*/
+		armature.animation.gotoAndPlay("cannon3");
+	}
+	
+	public function cannon4():void {
+		/*if (isJumping) {
+			return;
+		}
+		speedY = -20;
+		isJumping = true;*/
+		armature.animation.gotoAndPlay("cannon4");
+	}
+	
+		public function cannon5():void {
+		/*if (isJumping) {
+			return;
+		}
+		speedY = -20;
+		isJumping = true;*/
+		armature.animation.gotoAndPlay("cannon5");
+	}
+	
 	public function squat(_isDown:Boolean):void {
 		if (isSquat == _isDown) {
 			return;
@@ -215,7 +269,7 @@ class StarlingGame extends Sprite {
 		}else {
 			if (moveDir * face > 0) {
 				speedX = 8* face;
-				armature.animation.gotoAndPlay("run");
+				armature.animation.gotoAndPlay("break");
 			}else {
 				speedX = -5 * face;
 				armature.animation.gotoAndPlay("runBack");
