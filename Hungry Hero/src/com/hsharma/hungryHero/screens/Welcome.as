@@ -15,6 +15,7 @@ package com.hsharma.hungryHero.screens
 {
 	import com.hsharma.hungryHero.customObjects.Font;
 	import com.hsharma.hungryHero.events.NavigationEvent;
+	import starling.display.MovieClip;
 	
 	import flash.media.SoundMixer;
 	import flash.net.URLRequest;
@@ -32,6 +33,8 @@ package com.hsharma.hungryHero.screens
 	import starling.utils.HAlign;
 	import starling.utils.VAlign;
 	
+	import feathers.controls.Button;
+	
 	/**
 	 * This is the welcome or main menu class for the game.
 	 *  
@@ -46,11 +49,18 @@ package com.hsharma.hungryHero.screens
 		/** Game title. */
 		private var title:Image;
 		
+		/**
+		 * The Feathers Button control that we'll be creating.
+		 */
+		private var fButton:feathers.controls.Button;
+		private var mcHoverState:MovieClip;
+		
+		
 		/** Play button. */
-		private var playBtn:Button;
+		private var playBtn:starling.display.Button;
 		
 		/** About button. */
-		private var aboutBtn:Button;
+		private var aboutBtn:starling.display.Button;
 		
 		/** Hero artwork. */
 		private var hero:Image;
@@ -59,13 +69,13 @@ package com.hsharma.hungryHero.screens
 		private var aboutText:TextField;
 		
 		/** hsharma.com button. */
-		private var hsharmaBtn:Button;
+		private var hsharmaBtn:starling.display.Button;
 		
 		/** Starling Framework button. */
-		private var starlingBtn:Button;
+		private var starlingBtn:starling.display.Button;
 		
 		/** Back button. */
-		private var backBtn:Button;
+		private var backBtn:starling.display.Button;
 		
 		/** Screen mode - "welcome" or "about". */
 		private var screenMode:String;
@@ -98,14 +108,14 @@ package com.hsharma.hungryHero.screens
 			drawScreen();
 		}
 		
-		/**
-		 * Draw all the screen elements. 
-		 * 
-		 */
-		private function drawScreen():void
+		/**
+		 * Draw all the screen elements. 
+		 * 
+		 */
+		private function drawScreen():void
 		{
 			// GENERAL ELEMENTS
-			
+			
 			bg = new Image(Assets.getTexture("BgWelcome"));
 			bg.blendMode = BlendMode.NONE;
 			this.addChild(bg);
@@ -122,13 +132,13 @@ package com.hsharma.hungryHero.screens
 			hero.y = 130;
 			this.addChild(hero);
 			
-			playBtn = new Button(Assets.getAtlas().getTexture("welcome_playButton"));
+			playBtn = new starling.display.Button(Assets.getAtlas().getTexture("welcome_playButton"));
 			playBtn.x = 640;
 			playBtn.y = 340;
 			playBtn.addEventListener(Event.TRIGGERED, onPlayClick);
 			this.addChild(playBtn);
 			
-			aboutBtn = new Button(Assets.getAtlas().getTexture("welcome_aboutButton"));
+			aboutBtn = new starling.display.Button(Assets.getAtlas().getTexture("welcome_aboutButton"));
 			aboutBtn.x = 460;
 			aboutBtn.y = 460;
 			aboutBtn.addEventListener(Event.TRIGGERED, onAboutClick);
@@ -150,23 +160,39 @@ package com.hsharma.hungryHero.screens
 			aboutText.height = aboutText.textBounds.height + 30;
 			this.addChild(aboutText);
 			
-			hsharmaBtn = new Button(Assets.getAtlas().getTexture("about_hsharmaLogo"));
+			hsharmaBtn = new starling.display.Button(Assets.getAtlas().getTexture("about_hsharmaLogo"));
 			hsharmaBtn.x = aboutText.x;
 			hsharmaBtn.y = aboutText.bounds.bottom;
 			hsharmaBtn.addEventListener(Event.TRIGGERED, onHsharmaBtnClick);
 			this.addChild(hsharmaBtn);
 			
-			starlingBtn = new Button(Assets.getAtlas().getTexture("about_starlingLogo"));
+			starlingBtn = new starling.display.Button(Assets.getAtlas().getTexture("about_starlingLogo"));
 			starlingBtn.x = aboutText.bounds.right - starlingBtn.width;
 			starlingBtn.y = aboutText.bounds.bottom;
 			starlingBtn.addEventListener(Event.TRIGGERED, onStarlingBtnClick);
 			this.addChild(starlingBtn);
 			
-			backBtn = new Button(Assets.getAtlas().getTexture("about_backButton"));
+			backBtn = new starling.display.Button(Assets.getAtlas().getTexture("about_backButton"));
 			backBtn.x = 660;
 			backBtn.y = 350;
 			backBtn.addEventListener(Event.TRIGGERED, onAboutBackClick);
 			this.addChild(backBtn);
+			
+			// FEATHERS BUTTON
+			//create a button and give it some text to display.
+			fButton = new feathers.controls.Button();
+			//fButton.label = "Click Me";			
+			fButton.stateToSkinFunction = null;
+			fButton.defaultSkin = new Image(Assets.getAtlas().getTexture(("welcome_playButton")));
+			fButton.downSkin = new Image(Assets.getAtlas().getTexture(("welcome_aboutButton")));
+			mcHoverState = new MovieClip(Assets.getAtlas().getTextures("soundOn"), 3);
+			Starling.juggler.add(mcHoverState);
+			this.addChild(mcHoverState);			
+			fButton.hoverSkin = mcHoverState;
+			fButton.validate();
+			fButton.x = 500;// (this.stage.stageWidth - this.fButton.width) / 2;
+			fButton.y = 500;// (this.stage.stageHeight - this.fButton.height) / 2;			
+			this.addChild( this.fButton );			
 		}
 		
 		/**
@@ -224,12 +250,18 @@ package com.hsharma.hungryHero.screens
 			showAbout();
 		}
 		
-		/**
-		 * Show about screen. 
-		 * 
-		 */
-		public function showAbout():void
-		{
+		/**
+
+		 * Show about screen. 
+
+		 * 
+
+		 */
+
+		public function showAbout():void
+
+		{
+
 			screenMode = "about";
 			
 			hero.visible = false;
@@ -239,7 +271,8 @@ package com.hsharma.hungryHero.screens
 			aboutText.visible = true;
 			hsharmaBtn.visible = true;
 			starlingBtn.visible = true;
-			backBtn.visible = true;
+			backBtn.visible = true;
+
 		}
 		
 		/**
@@ -260,6 +293,8 @@ package com.hsharma.hungryHero.screens
 			
 			screenMode = "welcome";
 			
+			fButton.visible = true;
+			
 			hero.visible = true;
 			playBtn.visible = true;
 			aboutBtn.visible = true;
@@ -279,14 +314,21 @@ package com.hsharma.hungryHero.screens
 			this.addEventListener(Event.ENTER_FRAME, floatingAnimation);
 		}
 		
-		/**
-		 * Animate floating objects. 
-		 * @param event
-		 * 
-		 */
-		private function floatingAnimation(event:Event):void
+		/**
+
+		 * Animate floating objects. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function floatingAnimation(event:Event):void
+
 		{
-			_currentDate = new Date();
+			_currentDate = new Date();
+
 			hero.y = 130 + (Math.cos(_currentDate.getTime() * 0.002)) * 25;
 			playBtn.y = 340 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
 			aboutBtn.y = 460 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
