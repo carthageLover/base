@@ -60,7 +60,7 @@ package com.hsharma.hungryHero.screens
 		private var playBtn:starling.display.Button;
 		
 		/** Quiz button. */
-		private var playBtn1:Button;
+		private var playBtn1:starling.display.Button;
 		
 		
 		/** About button. */
@@ -149,7 +149,7 @@ package com.hsharma.hungryHero.screens
 			this.addChild(aboutBtn);
 			*/
 			
-			playBtn1 = new Button(Assets.getAtlas().getTexture("welcome_playButton"));
+			playBtn1 = new starling.display.Button(Assets.getAtlas().getTexture("welcome_playButton"));
 			playBtn1.x = 690;
 			playBtn1.y = 340;
 			playBtn1.addEventListener(Event.TRIGGERED, onPlay1Click);
