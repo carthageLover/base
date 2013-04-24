@@ -24,6 +24,7 @@ package com.hsharma.hungryHero.gameElements
 	 * @author hsharma
 	 * 
 	 */
+	
 	public class BgLayer extends Sprite
 	{
 		/** Layer identification. */
@@ -78,10 +79,14 @@ package com.hsharma.hungryHero.gameElements
 			this.addChild(image2);
 		}
 
-		/**
-		 * Parallax depth. 
-		 * 
-		 */
+		/**
+
+		 * Parallax depth. 
+
+		 * 
+
+		 */
+
 		public function get parallaxDepth():Number { return _parallaxDepth; }
 		public function set parallaxDepth(value:Number):void { _parallaxDepth = value; }
 	}

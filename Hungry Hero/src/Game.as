@@ -15,6 +15,7 @@ package
 {
 	import com.hsharma.hungryHero.events.NavigationEvent;
 	import com.hsharma.hungryHero.screens.InGame;
+	import com.hsharma.hungryHero.screens.Quizdom;
 	import com.hsharma.hungryHero.screens.Welcome;
 	import com.hsharma.hungryHero.ui.SoundButton;
 	
@@ -34,6 +35,8 @@ package
 	{
 		/** Screen - Welcome or Main Menu. */
 		private var screenWelcome:Welcome;
+		
+		private var screenQuiz:Quizdom;
 		
 		/** Screen - InGame. */
 		private var screenInGame:InGame;
@@ -61,11 +64,16 @@ package
 			initScreens();
 		}
 		
-		/**
-		 * Initialize screens. 
-		 * 
-		 */
-		private function initScreens():void
+		/**
+
+		 * Initialize screens. 
+
+		 * 
+
+		 */
+
+		private function initScreens():void
+
 		{
 			this.addEventListener(NavigationEvent.CHANGE_SCREEN, onChangeScreen);
 			
@@ -74,7 +82,8 @@ package
 			screenInGame.addEventListener(NavigationEvent.CHANGE_SCREEN, onInGameNavigation);
 			this.addChild(screenInGame);
 			
-			// Welcome screen.
+			// Welcome screen.
+
 			screenWelcome = new Welcome();
 			this.addChild(screenWelcome);
 
@@ -87,15 +96,28 @@ package
 			
 			// Initialize the Welcome screen by default. 
 			screenWelcome.initialize();
+			
+			//screenQuiz = new Quizdom();
+			//this.addChild(screenQuiz);
+			//screenQuiz.initialize();
+			
+			Sounds.muted = true;
 		}
 		
-		/**
-		 * On navigation from different screens. 
-		 * @param event
-		 * 
-		 */
-		private function onInGameNavigation(event:NavigationEvent):void
-		{
+		/**
+
+		 * On navigation from different screens. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function onInGameNavigation(event:NavigationEvent):void
+
+		{
+
 			switch (event.params.id)
 			{
 				case "mainMenu":
@@ -105,22 +127,32 @@ package
 					screenWelcome.initialize();
 					screenWelcome.showAbout();
 					break;
-			}
+
+					
+			}
+
 		}
 		
-		/**
-		 * On click of the sound/mute button. 
-		 * @param event
-		 * 
-		 */
-		private function onSoundButtonClick(event:Event = null):void
-		{
+		/**
+
+		 * On click of the sound/mute button. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function onSoundButtonClick(event:Event = null):void
+
+		{
+
 			if (Sounds.muted)
 			{
 				Sounds.muted = false;
 				
-				if (screenWelcome.visible) Sounds.sndBgMain.play(0, 999);
-				else if (screenInGame.visible) Sounds.sndBgGame.play(0, 999);
+				//if (screenWelcome.visible) Sounds.sndBgMain.play(0, 999);
+				//else if (screenInGame.visible) Sounds.sndBgGame.play(0, 999);
 				
 				soundButton.showUnmuteState();
 			}
@@ -130,23 +162,38 @@ package
 				SoundMixer.stopAll();
 				
 				soundButton.showMuteState();
-			}
+			}
+
 		}
 		
-		/**
-		 * On change of screen. 
-		 * @param event
-		 * 
-		 */
-		private function onChangeScreen(event:NavigationEvent):void
-		{
+		/**
+
+		 * On change of screen. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function onChangeScreen(event:NavigationEvent):void
+
+		{
+
 			switch (event.params.id)
 			{
 				case "play":
 					screenWelcome.disposeTemporarily();
 					screenInGame.initialize();
 					break;
-			}
+				case "quiz":
+					screenQuiz = new Quizdom();
+					this.addChild(screenQuiz);
+					//screenQuiz.disposeTemporarily();
+					//screenQuiz.initialize();
+					break;	
+			}
+
 		}
 	}
 }

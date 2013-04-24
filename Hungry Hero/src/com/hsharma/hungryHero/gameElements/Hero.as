@@ -24,6 +24,7 @@ package com.hsharma.hungryHero.gameElements
 	 * @author hsharma
 	 * 
 	 */
+	
 	public class Hero extends Sprite
 	{
 		/** Hero character animation. */
@@ -39,13 +40,20 @@ package com.hsharma.hungryHero.gameElements
 			this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
-		/**
-		 * On added to stage. 
-		 * @param event
-		 * 
-		 */
-		private function onAddedToStage(event:Event):void
-		{
+		/**
+
+		 * On added to stage. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function onAddedToStage(event:Event):void
+
+		{
+
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
 			// Set the game state to idle.
@@ -55,17 +63,24 @@ package com.hsharma.hungryHero.gameElements
 			createHeroArt();
 		}
 		
-		/**
-		 * Create hero art/visuals. 
-		 * 
-		 */
-		private function createHeroArt():void
-		{
+		/**
+
+		 * Create hero art/visuals. 
+
+		 * 
+
+		 */
+
+		private function createHeroArt():void
+
+		{
+
 			heroArt = new MovieClip(Assets.getAtlas().getTextures("fly_"), 20);
 			heroArt.x = Math.ceil(-heroArt.width/2);
 			heroArt.y = Math.ceil(-heroArt.height/2);
 			starling.core.Starling.juggler.add(heroArt);
-			this.addChild(heroArt);
+			this.addChild(heroArt);
+
 		}
 		
 		/**
@@ -86,13 +101,15 @@ package com.hsharma.hungryHero.gameElements
 			else heroArt.fps = 60;
 		}
 
-		override public function get width():Number
+		override public function get width():Number
+
 		{
 			if (heroArt) return heroArt.texture.width;
 			else return NaN;
 		}
 
-		override public function get height():Number
+		override public function get height():Number
+
 		{
 			if (heroArt) return heroArt.texture.height;
 			else return NaN;

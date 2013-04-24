@@ -18,6 +18,16 @@ package
 	
 	import starling.core.Starling;
 	
+	import dragonBones.Armature;
+	import dragonBones.Bone;
+	import dragonBones.animation.WorldClock;
+	import dragonBones.factorys.StarlingFactory;
+	import dragonBones.objects.XMLDataParser;
+
+	import dragonBones.events.AnimationEvent;
+	import dragonBones.objects.SkeletonData;
+	import dragonBones.textures.StarlingTextureAtlas;
+	
 	/**
 	 * SWF meta data defined for iPad 1 & 2 in landscape mode. 
 	 */	

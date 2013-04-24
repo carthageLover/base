@@ -49,6 +49,10 @@ package com.hsharma.hungryHero.screens
 		/** Play button. */
 		private var playBtn:Button;
 		
+		/** Quiz button. */
+		private var playBtn1:Button;
+		
+		
 		/** About button. */
 		private var aboutBtn:Button;
 		
@@ -98,30 +102,36 @@ package com.hsharma.hungryHero.screens
 			drawScreen();
 		}
 		
-		/**
-		 * Draw all the screen elements. 
-		 * 
-		 */
-		private function drawScreen():void
+		/**
+
+		 * Draw all the screen elements. 
+
+		 * 
+
+		 */
+
+		private function drawScreen():void
+
 		{
 			// GENERAL ELEMENTS
-			
+			
+
 			bg = new Image(Assets.getTexture("BgWelcome"));
 			bg.blendMode = BlendMode.NONE;
 			this.addChild(bg);
-			
-			title = new Image(Assets.getAtlas().getTexture(("welcome_title")));
+			/*
+			title = new Image(Assets.getTexture(("logo")));
 			title.x = 600;
 			title.y = 65;
 			this.addChild(title);
-			
+			*/
 			// WELCOME ELEMENTS
 			
-			hero = new Image(Assets.getAtlas().getTexture("welcome_hero"));
+			hero = new Image(Assets.getTexture("pirate"));
 			hero.x = -hero.width;
 			hero.y = 130;
 			this.addChild(hero);
-			
+			/*
 			playBtn = new Button(Assets.getAtlas().getTexture("welcome_playButton"));
 			playBtn.x = 640;
 			playBtn.y = 340;
@@ -133,6 +143,14 @@ package com.hsharma.hungryHero.screens
 			aboutBtn.y = 460;
 			aboutBtn.addEventListener(Event.TRIGGERED, onAboutClick);
 			this.addChild(aboutBtn);
+			*/
+			
+			playBtn1 = new Button(Assets.getAtlas().getTexture("welcome_playButton"));
+			playBtn1.x = 690;
+			playBtn1.y = 340;
+			playBtn1.addEventListener(Event.TRIGGERED, onPlay1Click);
+			this.addChild(playBtn1);
+			
 			
 			// ABOUT ELEMENTS
 			fontRegular = Fonts.getFont("Regular");
@@ -167,6 +185,13 @@ package com.hsharma.hungryHero.screens
 			backBtn.y = 350;
 			backBtn.addEventListener(Event.TRIGGERED, onAboutBackClick);
 			this.addChild(backBtn);
+		}
+		
+		private function onPlay1Click(e:Event):void 
+		{
+			this.dispatchEvent(new NavigationEvent(NavigationEvent.CHANGE_SCREEN, {id: "quiz"}, true));
+			
+			if (!Sounds.muted) Sounds.sndCoffee.play();
 		}
 		
 		/**
@@ -213,6 +238,7 @@ package com.hsharma.hungryHero.screens
 			if (!Sounds.muted) Sounds.sndCoffee.play();
 		}
 		
+		
 		/**
 		 * On about button click. 
 		 * @param event
@@ -224,12 +250,18 @@ package com.hsharma.hungryHero.screens
 			showAbout();
 		}
 		
-		/**
-		 * Show about screen. 
-		 * 
-		 */
-		public function showAbout():void
-		{
+		/**
+
+		 * Show about screen. 
+
+		 * 
+
+		 */
+
+		public function showAbout():void
+
+		{
+
 			screenMode = "about";
 			
 			hero.visible = false;
@@ -239,7 +271,8 @@ package com.hsharma.hungryHero.screens
 			aboutText.visible = true;
 			hsharmaBtn.visible = true;
 			starlingBtn.visible = true;
-			backBtn.visible = true;
+			backBtn.visible = true;
+
 		}
 		
 		/**
@@ -253,16 +286,16 @@ package com.hsharma.hungryHero.screens
 			this.visible = true;
 			
 			// If not coming from about, restart playing background music.
-			if (screenMode != "about")
-			{
-				if (!Sounds.muted) Sounds.sndBgMain.play(0, 999);
-			}
+			//if (screenMode != "about")
+			//{
+		//		if (!Sounds.muted) Sounds.sndBgMain.play(0, 999);
+		//	}
 			
 			screenMode = "welcome";
 			
 			hero.visible = true;
-			playBtn.visible = true;
-			aboutBtn.visible = true;
+			//playBtn.visible = true;
+			//aboutBtn.visible = true;
 			
 			aboutText.visible = false;
 			hsharmaBtn.visible = false;
@@ -270,26 +303,33 @@ package com.hsharma.hungryHero.screens
 			backBtn.visible = false;
 			
 			hero.x = -hero.width;
-			hero.y = 100;
+			hero.y = 200;
 			
 			tween_hero = new Tween(hero, 4, Transitions.EASE_OUT);
 			tween_hero.animate("x", 80);
 			Starling.juggler.add(tween_hero);
 			
-			this.addEventListener(Event.ENTER_FRAME, floatingAnimation);
+			//this.addEventListener(Event.ENTER_FRAME, floatingAnimation);
 		}
 		
-		/**
-		 * Animate floating objects. 
-		 * @param event
-		 * 
-		 */
-		private function floatingAnimation(event:Event):void
+		/**
+
+		 * Animate floating objects. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function floatingAnimation(event:Event):void
+
 		{
-			_currentDate = new Date();
+			_currentDate = new Date();
+
 			hero.y = 130 + (Math.cos(_currentDate.getTime() * 0.002)) * 25;
-			playBtn.y = 340 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
-			aboutBtn.y = 460 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
+		//	playBtn.y = 340 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
+		//	aboutBtn.y = 460 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
 		}
 		
 		/**

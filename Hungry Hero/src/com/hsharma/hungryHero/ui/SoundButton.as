@@ -28,6 +28,7 @@ package com.hsharma.hungryHero.ui
 	 * @author hsharma
 	 * 
 	 */
+	
 	public class SoundButton extends Button
 	{
 		/** Animation shown when sound is playing.  */
@@ -43,25 +44,39 @@ package com.hsharma.hungryHero.ui
 			this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
-		/**
-		 * On added to stage. 
-		 * @param event
-		 * 
-		 */
-		private function onAddedToStage(event:Event):void
+		/**
+
+		 * On added to stage. 
+
+		 * @param event
+
+		 * 
+
+		 */
+
+		private function onAddedToStage(event:Event):void
+
 		{
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-			
+			
+
 			setButtonTextures();
-			showUnmuteState();
+			showUnmuteState();
+
 		}
 		
-		/**
-		 * Set textures for button states. 
-		 * 
-		 */
-		private function setButtonTextures():void
-		{
+		/**
+
+		 * Set textures for button states. 
+
+		 * 
+
+		 */
+
+		private function setButtonTextures():void
+
+		{
+
 			// Normal state - image
 			mcUnmuteState = new MovieClip(Assets.getAtlas().getTextures("soundOn"), 3);
 			Starling.juggler.add(mcUnmuteState);

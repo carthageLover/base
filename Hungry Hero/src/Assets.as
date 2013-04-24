@@ -47,6 +47,17 @@ package
 		[Embed(source="../media/graphics/bgWelcome.jpg")]
 		public static const BgWelcome:Class;
 		
+		[Embed(source="../media/graphics/quizdomBack.jpg")]
+		public static const quizdomBack:Class;
+		
+		[Embed(source="../media/graphics/logo.png")]
+		public static const logo:Class;
+		
+		[Embed(source="../media/graphics/pirate.png")]
+		public static const pirate:Class;
+		
+		[Embed(source="../media/graphics/water.png")]
+		public static const water:Class;
 		/**
 		 * Texture Cache 
 		 */
