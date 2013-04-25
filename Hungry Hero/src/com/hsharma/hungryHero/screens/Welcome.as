@@ -189,7 +189,7 @@ package com.hsharma.hungryHero.screens
 			backBtn.y = 350;
 			backBtn.addEventListener(Event.TRIGGERED, onAboutBackClick);
 			this.addChild(backBtn);
-			
+			/*
 			// FEATHERS BUTTON
 			//create a button and give it some text to display.
 			fButton = new feathers.controls.Button();
@@ -204,7 +204,7 @@ package com.hsharma.hungryHero.screens
 			fButton.validate();
 			fButton.x = 500;// (this.stage.stageWidth - this.fButton.width) / 2;
 			fButton.y = 500;// (this.stage.stageHeight - this.fButton.height) / 2;			
-			this.addChild( this.fButton );			
+			this.addChild( this.fButton );	*/		
 		}
 		
 		private function onPlay1Click(e:Event):void 
@@ -313,7 +313,7 @@ package com.hsharma.hungryHero.screens
 			
 			screenMode = "welcome";
 			
-			fButton.visible = false;
+			//fButton.visible = false;
 			
 			hero.visible = true;
 			//playBtn.visible = true;

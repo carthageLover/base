@@ -47,7 +47,7 @@ package
 		[Embed(source="../media/graphics/bgWelcome.jpg")]
 		public static const BgWelcome:Class;
 		
-		[Embed(source="../media/graphics/quizdomBack.jpg")]
+		[Embed(source="../media/graphics/quizdomBack.png")]
 		public static const quizdomBack:Class;
 		
 		[Embed(source="../media/graphics/logo.png")]

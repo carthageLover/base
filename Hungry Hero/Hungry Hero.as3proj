@@ -2,15 +2,15 @@
 <project version="2">
   <!-- Output SWF options -->
   <output>
-    <movie outputType="Application" />
+    <movie outputType="CustomBuild" />
     <movie input="" />
     <movie path="bin-debug\HungryHero.swf" />
     <movie fps="30" />
     <movie width="800" />
     <movie height="600" />
-    <movie version="11" />
-    <movie minorVersion="0" />
-    <movie platform="Flash Player" />
+    <movie version="3" />
+    <movie minorVersion="4" />
+    <movie platform="AIR" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->

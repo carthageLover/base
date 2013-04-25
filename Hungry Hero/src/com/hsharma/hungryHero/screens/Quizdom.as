@@ -47,9 +47,8 @@ package com.hsharma.hungryHero.screens
 	 * @author hsharma
 	 * 
 	 */
-	
 
-	 
+
 	public class Quizdom extends Sprite
 	{
 		
@@ -165,6 +164,7 @@ package com.hsharma.hungryHero.screens
 			
 			bg = new Image(Assets.getTexture("quizdomBack"));
 			bg.blendMode = BlendMode.NONE;
+			bg.width = 1024;
 			this.addChild(bg);
 		
 			textField = new TextField(700, 30, "Use keys 1 to 5 (numeric keyboard)", "Arial", 18, 0, true)
@@ -190,6 +190,7 @@ package com.hsharma.hungryHero.screens
 				Texture.fromBitmapData(new TextureData().bitmapData), 
 				XML(new TextureXMLData())
 			);
+			
 			factory.addTextureAtlas(textureAtlas);
 			
 			armature = factory.buildArmature("masterShip");
@@ -197,6 +198,7 @@ package com.hsharma.hungryHero.screens
 			armatureClip.x = 20;
 			armatureClip.y = 900;
 			addChild(armatureClip);
+			
 			WorldClock.clock.add(armature);
 			addEventListener(EnterFrameEvent.ENTER_FRAME, onEnterFrameHandler);
 			

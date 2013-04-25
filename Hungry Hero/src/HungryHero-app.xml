@@ -15,7 +15,7 @@
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
   <id>HungryHero</id>
   <!-- Used as the filename for the application. Required. -->
-  <filename>HungryHero</filename>
+  <filename>com.wopidom.hungry</filename>
   <!-- The name that is displayed in the AIR application installer. 
 	May have multiple values for each language. See samples or xsd schema file. Optional. -->
   <name>Hungry Hero</name>
@@ -36,7 +36,7 @@
   <initialWindow>
     <!-- The main SWF or HTML file of the application. Required. -->
     <!-- Note: In Flash Builder, the SWF reference is set automatically. -->
-    <content>[This%20value%20will%20be%20overwritten%20by%20Flash%20Builder%20in%20the%20output%20app.xml]</content>
+    <content>HungryHero.swf</content>
     <!-- The title of the main window. Optional. -->
     <!-- <title></title> -->
     <!-- The type of system chrome to use (either "standard" or "none"). Optional. Default standard. -->
@@ -81,6 +81,7 @@
     <fullScreen>true</fullScreen>
     <visible>true</visible>
     <systemChrome>standard</systemChrome>
+    <title>Hungry</title>
   </initialWindow>
   <!-- We recommend omitting the supportedProfiles element, -->
   <!-- which in turn permits your application to be deployed to all -->
