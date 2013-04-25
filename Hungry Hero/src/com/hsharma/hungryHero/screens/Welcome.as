@@ -53,8 +53,10 @@ package com.hsharma.hungryHero.screens
 		 * The Feathers Button control that we'll be creating.
 		 */
 		private var fButton:feathers.controls.Button;
+		private var mcUpState:MovieClip;
 		private var mcHoverState:MovieClip;
-		
+		private var mcDownState:MovieClip;
+		private var mcOffState:MovieClip;
 		
 		/** Play button. */
 		private var playBtn:starling.display.Button;
@@ -193,14 +195,29 @@ package com.hsharma.hungryHero.screens
 			// FEATHERS BUTTON
 			//create a button and give it some text to display.
 			fButton = new feathers.controls.Button();
+			fButton.useHandCursor = true;
+			fButton.isQuickHitAreaEnabled = false;
 			//fButton.label = "Click Me";			
 			fButton.stateToSkinFunction = null;
-			fButton.defaultSkin = new Image(Assets.getAtlas().getTexture(("welcome_playButton")));
-			fButton.downSkin = new Image(Assets.getAtlas().getTexture(("welcome_aboutButton")));
-			mcHoverState = new MovieClip(Assets.getAtlas().getTextures("soundOn"), 3);
+			//fButton.defaultSkin = new Image(Assets.getAtlas().getTexture(("welcome_playButton")));
+			mcHoverState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOover"),12);
+			mcHoverState.loop = false;
+			mcUpState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOon"));
+			mcDownState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOdown"));
+			//mcDownState.loop = false;
+			mcOffState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOoff"));
 			Starling.juggler.add(mcHoverState);
-			this.addChild(mcHoverState);			
+			//this.addChild(mcHoverState);			
+			Starling.juggler.add(mcUpState);
+			//this.addChild(mcUpState);			
+			Starling.juggler.add(mcDownState);
+			//this.addChild(mcDownState);			
+			Starling.juggler.add(mcOffState);
+			//this.addChild(mcOffState);			
 			fButton.hoverSkin = mcHoverState;
+			fButton.defaultSkin = mcUpState;
+			fButton.downSkin = mcDownState;
+			fButton.disabledSkin = mcOffState;
 			fButton.validate();
 			fButton.x = 500;// (this.stage.stageWidth - this.fButton.width) / 2;
 			fButton.y = 500;// (this.stage.stageHeight - this.fButton.height) / 2;			

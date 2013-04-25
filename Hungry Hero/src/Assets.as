@@ -38,6 +38,12 @@ package
 		[Embed(source="../media/graphics/mySpritesheet.xml", mimeType="application/octet-stream")]
 		public static const AtlasXmlGame:Class;
 		
+		[Embed(source="../media/graphics/Boton.png")]
+		public static const AtlasTextureBoton:Class;
+		
+		[Embed(source="../media/graphics/Boton.xml", mimeType="application/octet-stream")]
+		public static const AtlasXmlBoton:Class;
+		
 		/**
 		 * Background Assets 
 		 */
@@ -63,6 +69,7 @@ package
 		 */
 		private static var gameTextures:Dictionary = new Dictionary();
 		private static var gameTextureAtlas:TextureAtlas;
+		private static var botonTextureAtlas:TextureAtlas;
 		
 		/**
 		 * Returns the Texture atlas instance.
@@ -74,7 +81,8 @@ package
 			{
 				var texture:Texture = getTexture("AtlasTextureGame");
 				var xml:XML = XML(new AtlasXmlGame());
-				gameTextureAtlas=new TextureAtlas(texture, xml);
+				gameTextureAtlas = new TextureAtlas(texture, xml);
+				gameTextureAtlas
 			}
 			
 			return gameTextureAtlas;
@@ -95,6 +103,23 @@ package
 			}
 			
 			return gameTextures[name];
+		}
+		
+		/**
+		 * Returns the Boton Texture atlas instance.
+		 * @return the Boton TextureAtlas instance (there is only oneinstance per app)
+		 */
+		public static function getBotonAtlas():TextureAtlas
+		{
+			if (botonTextureAtlas == null)
+			{
+				var texture:Texture = getTexture("AtlasTextureBoton");
+				var xml:XML = XML(new AtlasXmlBoton());
+				botonTextureAtlas = new TextureAtlas(texture, xml);
+				botonTextureAtlas
+			}
+			
+			return botonTextureAtlas;
 		}
 	}
 }
