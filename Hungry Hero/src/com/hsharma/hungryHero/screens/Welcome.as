@@ -15,6 +15,7 @@ package com.hsharma.hungryHero.screens
 {
 	import com.hsharma.hungryHero.customObjects.Font;
 	import com.hsharma.hungryHero.events.NavigationEvent;
+	import com.hsharma.hungryHero.ui.AnimButton;
 	import starling.display.MovieClip;
 	
 	import flash.media.SoundMixer;
@@ -222,6 +223,11 @@ package com.hsharma.hungryHero.screens
 			fButton.x = 500;// (this.stage.stageWidth - this.fButton.width) / 2;
 			fButton.y = 500;// (this.stage.stageHeight - this.fButton.height) / 2;			
 			this.addChild( this.fButton );			
+			
+			var animBtn:AnimButton = new AnimButton();
+			animBtn.x = 680;
+			animBtn.y = 520;
+			this.addChild(animBtn);
 		}
 		
 		private function onPlay1Click(e:Event):void 
