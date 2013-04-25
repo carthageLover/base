@@ -313,7 +313,7 @@ package com.hsharma.hungryHero.screens
 			
 			screenMode = "welcome";
 			
-			fButton.visible = true;
+			fButton.visible = false;
 			
 			hero.visible = true;
 			//playBtn.visible = true;

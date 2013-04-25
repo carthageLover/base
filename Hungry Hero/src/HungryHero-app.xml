@@ -219,4 +219,5 @@
 </array>]]></InfoAdditions>
     <requestedDisplayResolution>high</requestedDisplayResolution>
   </iPhone>
+  <supportedProfiles>mobileDevice</supportedProfiles>
 </application>
