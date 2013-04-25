@@ -78,7 +78,7 @@ package com.hsharma.hungryHero.ui
 			//this.addChild(imageMuteState);
 			
 			
-			mcHoverState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOover"),30);
+			mcHoverState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOover"),24);
 			mcHoverState.loop = false;
 			Starling.juggler.add(mcHoverState);
 			this.addChild(mcHoverState);			
@@ -98,7 +98,7 @@ package com.hsharma.hungryHero.ui
 			Starling.juggler.add(mcOffState);
 			this.addChild(mcOffState);
 			
-			mcOutState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOout"));
+			mcOutState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOout"), 24);
 			mcOutState.loop = false;
 			Starling.juggler.add(mcOutState);
 			this.addChild(mcOutState);
@@ -131,18 +131,27 @@ package com.hsharma.hungryHero.ui
 		
 		public function showUpState():void
 		{
-			mcUpState.visible = true;
+			if (mcHoverState.visible) 
+			{
+				mcHoverState.visible = false;
+				mcOutState.visible = true;
+				mcOutState.currentFrame = 0;
+				mcOutState.play();
+			}			
+
+			
+			//mcUpState.visible = true;
 			mcHoverState.visible = false;
-			mcHoverState.currentFrame = 0;
 			mcDownState.visible = false;
 			mcOffState.visible = false;
-			mcOutState.visible = false;
+			//mcOutState.visible = false;
 			
 			if (!mcUpState.isPlaying) 
 			{
-				mcUpState.currentFrame = 0;
-				mcUpState.play();
+				//mcUpState.currentFrame = 0;
+				//mcUpState.play();
 			}
+
 			
 		}		
 		
