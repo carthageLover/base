@@ -17,6 +17,7 @@ package com.hsharma.hungryHero.screens
 	import com.hsharma.hungryHero.events.NavigationEvent;
 	import dragonBones.animation.WorldClock;
 	import dragonBones.Armature;
+	import dragonBones.Bone;
 	import dragonBones.factorys.StarlingFactory;
 	import dragonBones.objects.SkeletonData;
 	import dragonBones.objects.XMLDataParser;
@@ -147,8 +148,24 @@ package com.hsharma.hungryHero.screens
 					armature.animation.gotoAndPlay("cannon4");
 					break;	
 				case 101 :
+					trace("101");
 					armature.animation.gotoAndPlay("cannon5");
 					break;	
+				case 90 :	
+					var _armR:Bone = armature.getBone("ship_3");
+					//var _armL:Bone = armature.getBone("armInside");
+					//var _movementName:String = "weapon" + (weaponID + 1);
+					trace("90!!!!!!");
+					armature.removeBoneByName("ship_2");
+					armature.removeBoneByName("ship_3");
+					armature.removeBoneByName("ship_4");
+					armature.removeBoneByName("ship_5");
+					armature.removeBoneByName("ship_6");
+					armature.removeBoneByName("ship_7");
+					armature.removeBoneByName("ship_8");
+					
+					//_armL.childArmature.animation.gotoAndPlay(_movementName);
+					break;
 			}
 		}
 		
