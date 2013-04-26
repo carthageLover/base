@@ -5,6 +5,7 @@
 package com.hsharma.hungryHero.ui
 {
 	import flash.display.BitmapData;
+	import flash.geom.Rectangle;
 	import starling.display.DisplayObject;
 	import starling.events.Touch;
 	import starling.events.TouchEvent;
@@ -26,6 +27,8 @@ package com.hsharma.hungryHero.ui
 	
 	public class AnimButton extends Button
 	{
+		static public const MAX_DRAG_DIST:Number = 50; // 50?
+		
 		/** Animation shown when sound is playing.  */
 		private var mcUnmuteState:MovieClip;
 		
@@ -88,7 +91,7 @@ package com.hsharma.hungryHero.ui
 			Starling.juggler.add(mcUpState);
 			this.addChild(mcUpState);			
 			
-			mcDownState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOdown"));
+			mcDownState = new MovieClip(Assets.getBotonAtlas().getTextures("BOTONASOdown"),24);
 			mcDownState.loop = false;
 			Starling.juggler.add(mcDownState);
 			this.addChild(mcDownState);			
@@ -120,39 +123,54 @@ package com.hsharma.hungryHero.ui
 				mcHoverState.play();
 			}
 			
-			
 //			if (!mcHoverState.isPlaying || !mcHoverState.isComplete) 
 //			{
 //				mcHoverState.currentFrame = 0;
 //				mcHoverState.play();
 //			}
-			
 		}
 		
-		public function showUpState():void
+		public function showOutState():void
 		{
 			if (mcHoverState.visible) 
 			{
 				mcHoverState.visible = false;
+				mcDownState.visible = false;
+				mcOffState.visible = false;
+				mcUpState.visible = false;
 				mcOutState.visible = true;
 				mcOutState.currentFrame = 0;
 				mcOutState.play();
-			}			
-
-			
-			//mcUpState.visible = true;
+				// this mc should end equal to mcUpState
+			}else {
+				//showUpState();
+			}
+		}
+		
+		public function showUpState():void
+		{			
+			mcUpState.visible = true;
 			mcHoverState.visible = false;
 			mcDownState.visible = false;
 			mcOffState.visible = false;
-			//mcOutState.visible = false;
+			mcOutState.visible = false;
 			
-			if (!mcUpState.isPlaying) 
+			mcUpState.currentFrame = 0;
+			mcUpState.play();
+		}		
+		
+		public function showDownState():void
+		{
+			if (!mcDownState.visible) 
 			{
-				//mcUpState.currentFrame = 0;
-				//mcUpState.play();
+				mcUpState.visible = false;
+				mcHoverState.visible = false;
+				mcDownState.visible = true;
+				mcOffState.visible = false;
+				mcOutState.visible = false;
+				mcDownState.currentFrame = 0;
+				mcDownState.play();
 			}
-
-			
 		}		
 		
 		/**
@@ -181,25 +199,43 @@ package com.hsharma.hungryHero.ui
 			/**
 				MouseEvent.MOUSE_DOWN -> TouchPhase.BEGAN
 				MouseEvent.MOUSE_UP -> TouchPhase.ENDED
-				MouseEvent.MOUSE_MOVE -> TouchPhase.MOVED or TouchPhase.HOVER
-				
+				MouseEvent.MOUSE_MOVE -> TouchPhase.MOVED (btn pressed) or TouchPhase.HOVER (btn unpressed)
 				One global mouse/touch listener handle events from various objects. In this listener you need:
-
 					1. to check touchEvent.target to filter object
 					2. to get Touch object form event: touchEvent.getTouch(this) and
 					3. filter touch.phase to indicate necessary mouse event
-
 				Also it is possible to use touchEvent.getTouch(this, [touch phase]) or 
 				touchEvent.getTouches(this, [touch phase]) to get touches filtered by phase.				
 			 */
-
-			 
+			
 			//	var touch:Touch = event.getTouch(this);
-			//  var outTouch:Touch = event.getTouch(event.target as DisplayObject, TouchPhase. .HOVER);
-            
-            // enable this code to see when you're hovering over the object
-            var touch:Touch = event.getTouch(this, TouchPhase.HOVER);            
-            touch ? showHoverState() : showUpState();
+			//  var outTouch:Touch = event.getTouch(event.target as DisplayObject, TouchPhase.HOVER);
+			
+			var touch:Touch = event.getTouch(this, TouchPhase.BEGAN);
+			if (touch) { showDownState(); return; }
+			
+			touch = event.getTouch(this, TouchPhase.ENDED);
+			if (touch) { 
+				// see if mouse is over the btn or out: over use showHoverState, else showUpstate.
+				
+                var buttonRect:Rectangle = getBounds(stage);
+                buttonRect.inflate(MAX_DRAG_DIST, MAX_DRAG_DIST);
+                if (!buttonRect.contains(touch.globalX, touch.globalY))
+					showUpState();
+				else
+					showHoverState();
+				
+				/*if (touch.tapCount > 0) 
+					showHoverState();
+				else
+					showUpState();*/
+				
+				return;
+				}
+			
+            // to see when you're hovering over the object w/o a button pressed.
+            touch = event.getTouch(this, TouchPhase.HOVER);            
+            touch ? showHoverState() : showOutState();
             //alpha = touch ? 0.8 : 1.0;			
 			//trace("touch en sound");
 		}
