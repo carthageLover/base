@@ -131,6 +131,10 @@ package com.hsharma.hungryHero.screens
 			drawScreen();
 		}
 		
+		private function deg2rad(degree:Number):Number {
+		return degree * (Math.PI / 180);
+		}
+		
 		
 		private function onKeyEventHandler(e:KeyboardEvent):void {
 			trace(e.keyCode );
@@ -148,26 +152,77 @@ package com.hsharma.hungryHero.screens
 					armature.animation.gotoAndPlay("cannon4");
 					break;	
 				case 101 :
-					trace("101");
+					trace("entro 101");
 					armature.animation.gotoAndPlay("cannon5");
 					break;	
-				case 90 :	
-					var _armR:Bone = armature.getBone("ship_3");
-					//var _armL:Bone = armature.getBone("armInside");
-					//var _movementName:String = "weapon" + (weaponID + 1);
-					trace("90!!!!!!");
-					armature.removeBoneByName("ship_2");
-					armature.removeBoneByName("ship_3");
-					armature.removeBoneByName("ship_4");
-					armature.removeBoneByName("ship_5");
-					armature.removeBoneByName("ship_6");
-					armature.removeBoneByName("ship_7");
-					armature.removeBoneByName("ship_8");
+				case 90 :
 					
-					//_armL.childArmature.animation.gotoAndPlay(_movementName);
+					trace("90!!!!!!");
+					var _armR:Bone = armature.getBone("ship_3");
+					if (_armR != null)
+					{
+					var tween_bone:Tween;
+					tween_bone = new Tween(_armR.origin, 1, Transitions.EASE_OUT);
+					tween_bone.animate("x", _armR.origin.x -50);
+					tween_bone.animate("y", _armR.origin.y - 500);
+					tween_bone.animate("rotation", deg2rad(360));
+					
+					//tween_bone.fadeTo(1);   
+					tween_bone.onComplete = function():void { 
+						trace("complete");
+						armature.removeBoneByName("ship_3");
+
+						};
+						
+					Starling.juggler.add(tween_bone);
+					}
 					break;
+				case 88 :	
+					trace("90!!!!!!");
+					_armR = armature.getBone("ship_4");
+					//tween_bone:Tween;
+					if (_armR != null)
+					{
+					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+					tween_bone.animate("x", _armR.origin.x + 800);
+					tween_bone.animate("y", _armR.origin.y - 200);
+					tween_bone.animate("rotation", deg2rad(360));
+					
+					//tween_bone.fadeTo(1);   
+					tween_bone.onComplete = function():void { 
+						trace("complete");
+						armature.removeBoneByName("ship_4");
+
+						};
+						
+					Starling.juggler.add(tween_bone);
+					}
+					break;	
+				case 67 :	
+					trace("67!!!!!!");
+					_armR = armature.getBone("ship_5");
+					//tween_bone:Tween;
+					if (_armR != null)
+					{
+					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+					tween_bone.animate("x", _armR.origin.x + 800);
+					tween_bone.animate("y", _armR.origin.y - 200);
+					tween_bone.animate("rotation", deg2rad(360));
+					
+					//tween_bone.fadeTo(1);   
+					tween_bone.onComplete = function():void { 
+						trace("complete");
+						armature.removeBoneByName("ship_5");
+
+						};
+						
+					Starling.juggler.add(tween_bone);
+					}
+					break;		
 			}
 		}
+		
+
 		
 		/**
 		 * Draw all the screen elements. 
@@ -184,7 +239,7 @@ package com.hsharma.hungryHero.screens
 			bg.width = 1024;
 			this.addChild(bg);
 		
-			textField = new TextField(700, 30, "Use keys 1 to 5 (numeric keyboard)", "Arial", 18, 0, true)
+			textField = new TextField(700, 30, "Use keys 1 to 5 (numeric keyboard) - Z,X,C to remove parts", "Arial", 18, 0, true)
 			textField.x = 60;
 			textField.y = 5;
 			this.addChild(textField);
