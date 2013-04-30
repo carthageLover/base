@@ -36,11 +36,13 @@ $app->get('/m', function(Request $request) use($app){
 
 $app->get('/xtr1414miBici71hTxChotoGarcha', function(Request $request) use($app){
 
-   `cd /var/www/base && git pull`;
+  // `cd /var/www/base && git pull`;
+	
+	$output = shell_exec('cd /var/www/base && git pull 2>&1');
 	
    //$rta="hola m: ".$request->get('p');
    
-   return new Response('{"result":"done"}', 200);
+   return new Response('{"result":"$output"}', 200);
 });
 
 
