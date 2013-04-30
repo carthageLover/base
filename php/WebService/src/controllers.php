@@ -34,6 +34,15 @@ $app->get('/m', function(Request $request) use($app){
    return new Response($rta, 200);
 });
 
+$app->get('/xtr1414miBici71hTxChotoGarcha', function(Request $request) use($app){
+
+   `cd /var/www/base && git pull`;
+	
+   //$rta="hola m: ".$request->get('p');
+   
+   return new Response('{"result":"done"}', 200);
+});
+
 
 /*****************************************************************************************************/
 /***** GET GAME TOKEN ********************************************************************************/
