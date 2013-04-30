@@ -30,7 +30,7 @@ $app->get('/', function(Request $request) use($app){
 $app->get('/m', function(Request $request) use($app){
 
    $rta="hola m: ".$request->get('p');
-   phpinfo();
+   //phpinfo();
    return new Response($rta, 200);
 });
 
