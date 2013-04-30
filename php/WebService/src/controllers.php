@@ -34,13 +34,16 @@ $app->get('/m', function(Request $request) use($app){
    return new Response($rta, 200);
 });
 
-$app->get('/xtr1414miBici71hTxChotoGarcha', function(Request $request) use($app){
+$app->post('/xtr1414miBici71hTxChotoGarcha', function(Request $request) use($app){
 
   // `cd /var/www/base && git pull`;
-	
-	$output = shell_exec('cd /var/www/base && git pull 2>&1');
-	
-   //$rta="hola m: ".$request->get('p');
+		
+   $rta=$request->get('payload');
+   
+   if ($rta)
+   {
+        $output = shell_exec('cd /var/www/base && git pull 2>&1');
+   }
    
    return new Response('{"Result":"'.$output.'"}', 200);
 });
