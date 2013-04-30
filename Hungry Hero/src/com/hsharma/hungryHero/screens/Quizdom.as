@@ -178,29 +178,45 @@ package com.hsharma.hungryHero.screens
 					}
 					break;
 				case 88 :	
-					trace("90!!!!!!");
+					trace("90!!!!!!"); 
+					
+					
 					_armR = armature.getBone("ship_4");
 					//tween_bone:Tween;
+					trace("start x=" +_armR.origin.x );
 					if (_armR != null)
 					{
 					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
-					tween_bone.animate("x", _armR.origin.x + 800);
-					tween_bone.animate("y", _armR.origin.y - 200);
+					tween_bone.animate("x", _armR.origin.x + 300);
+					tween_bone.animate("y", _armR.origin.y - 300);
 					tween_bone.animate("rotation", deg2rad(360));
-					
+					//Starling.juggler.add(tween_bone);
 					//tween_bone.fadeTo(1);   
-					tween_bone.onComplete = function():void { 
-						trace("complete");
-						armature.removeBoneByName("ship_4");
-
-						};
+					/*tween_bone.onComplete = function():void { 
+						tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+						trace("complete x=" +_armR.origin.x );
+						//armature.removeBoneByName("ship_4");
+						tween_bone.animate("x", _armR.origin.x + 400);
+					    tween_bone.animate("y", _armR.origin.y + 400);
+					    tween_bone.animate("rotation", deg2rad(360));
+						};*/
 						
+					var tween_bone2:Tween = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+					tween_bone2.animate("x", _armR.origin.x + 600);
+					tween_bone2.animate("y", _armR.origin.y + 300);
+					tween_bone2.animate("rotation", deg2rad(720));
+					
+					tween_bone2.delay = tween_bone.totalTime-0.8;
+					
 					Starling.juggler.add(tween_bone);
+					Starling.juggler.add(tween_bone2);
+					
 					}
 					break;	
 				case 67 :	
 					trace("67!!!!!!");
 					_armR = armature.getBone("ship_5");
+					
 					//tween_bone:Tween;
 					if (_armR != null)
 					{
@@ -222,7 +238,26 @@ package com.hsharma.hungryHero.screens
 			}
 		}
 		
-
+/*
+		private function updateArrows():void 
+		{
+			var _arrow:Object;
+			var _length:uint = arrows.length;
+			for (var _i:int = _length - 1; _i >= 0; _i --) {
+				_arrow = arrows[_i];
+				_arrow.vy += 1;
+				_arrow.display.x += _arrow.vx;
+				_arrow.display.y += _arrow.vy;
+				_arrow.display.rotation = Math.atan2(_arrow.vy, _arrow.vx);
+				
+				if (_arrow.display.y > 850) {
+					arrows.splice(_i, 1);
+					removeChild(_arrow.display);
+					_arrow.display.dispose();
+					_arrow.display = null;
+				}
+			}
+		}*/
 		
 		/**
 		 * Draw all the screen elements. 

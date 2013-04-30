@@ -1,4 +1,4 @@
-package platform_web
+package 
 {
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;

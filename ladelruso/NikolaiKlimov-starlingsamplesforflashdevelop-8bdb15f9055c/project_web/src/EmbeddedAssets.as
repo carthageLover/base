@@ -39,6 +39,17 @@ package
         [Embed(source="../../assets/textures/6x/bandera.png")]
         public static const bandera:Class;
 		
+		/*
+		[Embed(source = "../../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
+		public static const SkeletonXMLData:Class;
+	
+		[Embed(source = "../../assets/textures/ship_rod/texture.xml", mimeType = "application/octet-stream")]
+		public static const TextureXMLData:Class;
+	
+		[Embed(source = "../../assets/textures/ship_rod/texture.png")]
+		public static const TextureData:Class;
+		*/
+		
 		// Compressed textures
         
        [Embed(source = "../../assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
