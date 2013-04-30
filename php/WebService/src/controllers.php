@@ -42,7 +42,7 @@ $app->get('/xtr1414miBici71hTxChotoGarcha', function(Request $request) use($app)
 	
    //$rta="hola m: ".$request->get('p');
    
-   return new Response('{"result":"$output"}', 200);
+   return new Response('{"result":"'.$output.'"}', 200);
 });
 
 
