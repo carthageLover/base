@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'4/30/2013'</value>
+      <value>'5/2/2013'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -44,7 +44,7 @@
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src\Demo_Web.as</path-element>
+    <path-element>C:\Users\porry\Documents\GitHub\base\ladelruso\NikolaiKlimov-starlingsamplesforflashdevelop-8bdb15f9055c\project_web\src\Main.as</path-element>
   </file-specs>
   <default-background-color>#FF8000</default-background-color>
   <default-frame-rate>60</default-frame-rate>

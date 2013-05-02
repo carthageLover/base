@@ -105,6 +105,7 @@ import dragonBones.objects.SkeletonData;
 import dragonBones.textures.StarlingTextureAtlas;
 
 class StarlingGame extends Sprite {
+	
 	[Embed(source = "../assets/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 	public static const SkeletonXMLData:Class;
 	

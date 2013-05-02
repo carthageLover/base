@@ -50,15 +50,22 @@ package scenes
 		[Embed(source="../../assets/textures/4x/ship.png")]
 	   public static const TexturePackerBitmap:Class;
 	   
-	   
+	   /*
 	   	[Embed(source = "../../assets/textures/1x/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 		public static const SkeletonXMLData:Class;
 	
 		[Embed(source = "../../assets/textures/1x/ship_rod/texture.xml", mimeType = "application/octet-stream")]
 		public static const TextureXMLData:Class;
+		*/
+		
+		[Embed(source = "../../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
+		public static const SkeletonXMLData:Class;
+ 
+		[Embed(source = "../../assets/textures/ship_rod/texture.xml", mimeType = "application/octet-stream")]
+		public static const TextureXMLData:Class;
 	
-		[Embed(source = "../../assets/textures/1x/ship_rod/texture.png")]
-		public static const TextureData:Class;
+		//[Embed(source = "../../assets/textures/1x/ship_rod/texture.png")]
+		//public static const TextureData:Class;
 	   
 		private var mMovie:MovieClip;
 		private var barco:Sprite;
@@ -357,25 +364,32 @@ package scenes
 			
 		}
 		
-		function deg2rad(degree) {
+		private function deg2rad(degree:Number):Number {
 			return degree * (Math.PI / 180);
 		}
 		
         private function onAddedToStage():void
         {
-            instance = this;
+           
+			//Game.assets.enqueue("../../assets/textures/ship_rod/texture.png");
+			instance = this;
 		
 			factory = new StarlingFactory();
-			
+
 			//
 			var skeletonData:SkeletonData = XMLDataParser.parseSkeletonData(XML(new SkeletonXMLData()));
 			factory.addSkeletonData(skeletonData);
+		
 			
+			var texture:Texture = Game.assets.getTexture("texture");
+			var textureAtlas:StarlingTextureAtlas = new StarlingTextureAtlas(texture, XML(new TextureXMLData()));
+	
+			//	factory.addTextureAtlas(textureAtlas);
 			//
-			var textureAtlas:StarlingTextureAtlas = new StarlingTextureAtlas(
+			/*var textureAtlas:StarlingTextureAtlas = new StarlingTextureAtlas(
 				Texture.fromBitmapData(new TextureData().bitmapData), 
 				XML(new TextureXMLData())
-			);
+			);*/
 			
 			factory.addTextureAtlas(textureAtlas);
 			
@@ -426,7 +440,9 @@ package scenes
 				case 90 :
 					
 					trace("90!!!!!!");
+					
 					var _armR:Bone = armature.getBone("ship_3");
+				
 					if (_armR != null)
 					{
 					var tween_bone:Tween;
@@ -449,9 +465,11 @@ package scenes
 					trace("90!!!!!!"); 
 					
 					
-					_armR = armature.getBone("ship_4");
+					_armR = armature.getBone("ship_4"); 
+					_armR.origin.x = 500;
+					
 					//tween_bone:Tween;
-					trace("start x=" +_armR.origin.x );
+					/*trace("start x=" +_armR.origin.x );
 					if (_armR != null)
 					{
 					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
@@ -469,7 +487,7 @@ package scenes
 					    tween_bone.animate("rotation", deg2rad(360));
 						};*/
 						
-					var tween_bone2:Tween = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+					/*var tween_bone2:Tween = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
 					tween_bone2.animate("x", _armR.origin.x + 600);
 					tween_bone2.animate("y", _armR.origin.y + 300);
 					tween_bone2.animate("rotation", deg2rad(720));
@@ -477,9 +495,9 @@ package scenes
 					tween_bone2.delay = tween_bone.totalTime-0.8;
 					
 					Starling.juggler.add(tween_bone);
-					Starling.juggler.add(tween_bone2);
+					Starling.juggler.add(tween_bone2);*/
 					
-					}
+					//}
 					break;	
 				case 67 :	
 					trace("67!!!!!!");

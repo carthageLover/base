@@ -37,6 +37,7 @@ public class Game extends Sprite
 	{
 		sAssets = assets;
 		
+		
 		// The background is passed into this method for two reasons:
 		// 
 		// 1) we need it right away, otherwise we have an empty frame
