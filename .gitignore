@@ -10,6 +10,3 @@ obj/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
-/Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.fla
-/Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.swc
-/Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.swf
