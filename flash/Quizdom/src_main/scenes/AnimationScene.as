@@ -18,9 +18,16 @@ package scenes
         private var mEgg:Image;
         private var mTransitionLabel:TextField;
         private var mTransitions:Array;
-        
+     
+		[Embed(source="../../assets_system/quizdomBack3.jpg")]
+		private var Background:Class;
+		
         public function AnimationScene()
         {
+			
+			var bgTexture:Texture = Texture.fromBitmap(new Background());
+			addChild(new Image(bgTexture));
+			
             mTransitions = [Transitions.LINEAR, Transitions.EASE_IN_OUT,
                             Transitions.EASE_OUT_BACK, Transitions.EASE_OUT_BOUNCE,
                             Transitions.EASE_OUT_ELASTIC];

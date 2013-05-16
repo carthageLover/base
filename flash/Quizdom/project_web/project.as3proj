@@ -42,7 +42,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="-swf-version=17" />
+    <option additional="-swf-version=17&#xA;-frame StartupFrame Demo_Web" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>
@@ -55,6 +55,8 @@
     <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs" />
     <element path="C:\Program Files (x86)\Adobe\Adobe Flash CS6\Common\Configuration\ActionScript 3.0\libs\11.0" />
     <element path="..\src_lib\libs\as3-signals-v0.8.swc" />
+    <element path="..\src_lib\libs\analytics.swc" />
+    <element path="..\src_lib\libs\greensock.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
@@ -74,7 +76,7 @@
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
-    <compile path="src\Main.as" />
+    <compile path="src\Demo_Web_Preloader.as" />
   </compileTargets>
   <!-- Paths to exclude from the Project Explorer tree -->
   <hiddenPaths>

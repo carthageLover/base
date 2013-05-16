@@ -14,7 +14,7 @@ package
     // set this class as your 'default application' and add the following 
     // compiler argument: '-frame StartupFrame Demo_Web'
     
-    [SWF(width="320", height="480", frameRate="60", backgroundColor="#222222")]
+    [SWF(width="760", height="600", frameRate="60", backgroundColor="#222222")]
 	public class Demo_Web_Preloader extends MovieClip
 	{
         private const STARTUP_CLASS:String = "Demo_Web";

@@ -11,16 +11,16 @@ import starling.utils.AssetManager;
 // If you set this class as your 'default application', it will run without a preloader.
 // To use a preloader, see 'Demo_Web_Preloader.as'.
 
-[SWF(width="800",height="600",frameRate="60",backgroundColor="#CEECF4")]
+[SWF(width="760",height="600",frameRate="60",backgroundColor="#CEECF4")]
 
-public class Main extends Sprite
+public class Demo_Web extends Sprite
 {
-	[Embed(source="../../assets_system/startup.jpg")]
+	[Embed(source="../../assets_system/quizdomBack.jpg")]
 	private var Background:Class;
 	
 	private var mStarling:Starling;
 	
-	public function Main()
+	public function Demo_Web()
 	{
 		if (stage)
 			start();

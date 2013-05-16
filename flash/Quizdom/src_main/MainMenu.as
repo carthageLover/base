@@ -10,7 +10,7 @@ import scenes.FilterScene;
 import scenes.MovieScene;
 import scenes.RenderTextureScene;
 import scenes.TextScene;
-import scenes.TextureScene;
+import scenes.ShipScreen;
 import scenes.TouchScene;
 
 import starling.core.Starling;
@@ -35,7 +35,7 @@ public class MainMenu extends Sprite
 		var logo:Image = new Image(Game.assets.getTexture("logo"));
 		addChild(logo);
 		
-		var scenesToCreate:Array = [["ShipTexture", TextureScene],["Textures1", TextureScene], ["Multitouch", TouchScene], ["TextFields", TextScene], ["Animations", AnimationScene], ["Custom hit-test", CustomHitTestScene], ["Movie Clip", MovieScene], ["Filters", FilterScene], ["Blend Modes", BlendModeScene], ["Render Texture", RenderTextureScene], ["Benchmark", BenchmarkScene]];
+		var scenesToCreate:Array = [["ShipTexture", ShipScreen],["Multitouch", TouchScene], ["TextFields", TextScene], ["Animations", AnimationScene], ["Custom hit-test", CustomHitTestScene], ["Movie Clip", MovieScene], ["Filters", FilterScene], ["Blend Modes", BlendModeScene], ["Render Texture", RenderTextureScene], ["Benchmark", BenchmarkScene]];
 		
 		var buttonTexture:Texture = Game.assets.getTexture("button_big");
 		var count:int = 0;
@@ -54,14 +54,14 @@ public class MainMenu extends Sprite
 		}
 		
 		// show information about rendering method (hardware/software)
-		
+		/*
 		var driverInfo:String = Starling.context.driverInfo;
 		var infoText:TextField = new TextField(310, 64, driverInfo, "Verdana", 10);
 		infoText.x = 5;
 		infoText.y = 475 - infoText.height;
 		infoText.vAlign = VAlign.BOTTOM;
 		infoText.addEventListener(TouchEvent.TOUCH, onInfoTextTouched);
-		addChildAt(infoText, 0);
+		addChildAt(infoText, 0);*/
 	}
 	
 	private function onInfoTextTouched(event:TouchEvent):void

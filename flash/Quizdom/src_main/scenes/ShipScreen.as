@@ -1,20 +1,11 @@
 package scenes
 {
-	/*import fl.motion.AnimatorFactory;
-	import dragonBones.factorys.StarlingFactory;
-	import dragonBones.factorys.StarlingFactory;
-	import dragonBones.factorys.StarlingFactory;
-	import dragonBones.factorys.StarlingFactory;
-	import dragonBones.factorys.StarlingFactory;
-	import dragonBones.objects.SkeletonData;
-	import dragonBones.objects.SkeletonData;
-	import fl.motion.Motion;
-	import fl.motion.MotionBase;*/
 	import flash.geom.Point;
 	import flashx.textLayout.formats.Float;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
 	import starling.core.Starling;
+	import starling.display.Button;
     import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.display.Sprite;
@@ -38,25 +29,9 @@ package scenes
 	import starling.events.EnterFrameEvent;
 	import starling.events.KeyboardEvent;		
 
-    public class TextureScene extends Scene
+    public class ShipScreen extends Scene
     {
 		
-		[Embed(source="../../assets/textures/4x/ship.scml", mimeType="application/octet-stream")]
-	   public static const OrcScml:Class;
-		
-		[Embed(source="../../assets/textures/4x/ship.xml", mimeType="application/octet-stream")]
-	   public static const TexturePackerXml:Class;
-		
-		[Embed(source="../../assets/textures/4x/ship.png")]
-	   public static const TexturePackerBitmap:Class;
-	   
-	   /*
-	   	[Embed(source = "../../assets/textures/1x/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
-		public static const SkeletonXMLData:Class;
-	
-		[Embed(source = "../../assets/textures/1x/ship_rod/texture.xml", mimeType = "application/octet-stream")]
-		public static const TextureXMLData:Class;
-		*/
 		
 		[Embed(source = "../../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 		public static const SkeletonXMLData:Class;
@@ -66,6 +41,11 @@ package scenes
 	
 		//[Embed(source = "../../assets/textures/1x/ship_rod/texture.png")]
 		//public static const TextureData:Class;
+		
+		[Embed(source="../../assets_system/quizdomBack2.jpg")]
+		private var Background:Class;
+
+
 	   
 		private var mMovie:MovieClip;
 		private var barco:Sprite;
@@ -80,59 +60,29 @@ package scenes
 		
 		private var i:int = 0;
 		
-		public static var instance:TextureScene;
+		public static var instance:ShipScreen;
 
 		private var factory:StarlingFactory;
 		private var armature:Armature;
 		private var armatureClip:Sprite;
-		
-        public function TextureScene(){	
+		private var mBackButton:Button;
+        
+		public function ShipScreen() {	
+			
+			var bgTexture:Texture = Texture.fromBitmap(new Background());
+			addChild(new Image(bgTexture));
+			
+			mBackButton = new Button(Game.assets.getTexture("button_back"), "Back");
+            mBackButton.x = Constants.CenterX - mBackButton.width / 2;
+            mBackButton.y = Constants.GameHeight - mBackButton.height + 1;
+            mBackButton.name = "backButton";
+            addChild(mBackButton);
+			
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
 		private function onEnterFrameHandler(_e:EnterFrameEvent):void {
 			WorldClock.clock.advanceTime(-1);
-		}
-		
-		protected function createSriterClip(animation:AnimationSet, atlas:TextureAtlas):void {
-			//Create Character
-			/*var orc:SpriterClip = new SpriterClip(animation, atlas); 
-			orc.play("fall");
-			orc.scaleX = orc.scaleY = 1;
-			orc.x = 100;
-			orc.y = 200;
-			addChild(orc);
-			Starling.juggler.add(orc);*/
-		}	
-		
-		protected function onSpriterLoaderComplete(loader:SpriterLoader):void {
-			
-			//Add Orc 1
-			/*orc = spriterLoader.getSpriterClip("bandera");
-			orc.play("fall", 0);
-			orc.scaleX = -1;
-			orc.y = 50;
-			orc.x = 300;
-			orc.playbackSpeed = 1;
-			addChild(orc);*/
-			
-			//For performance reasons, SpriterClips will not update themselves, they must externally ticked each frame. 
-			//The Starling Juggler is a simple way to do that.
-			//Starling.juggler.add(orc);
-			
-			//Add a "Brawler"
-			/*brawler = spriterLoader.getSpriterClip("bandera");
-			brawler.setPosition(200, 200);
-			brawler.play("fall");
-			addChild(brawler);
-			Starling.juggler.add(brawler);
-			*/
-			//Add Touch Support to each Sprite
-			//orc.touchable = true;
-			//orc.addEventListener(TouchEvent.TOUCH, onCharacterTouched);
-			//brawler.touchable = true;
-			//brawler.addEventListener(TouchEvent.TOUCH, onCharacterTouched);
-			
 		}
 		
 		private function deg2rad(degree:Number):Number {
@@ -141,13 +91,13 @@ package scenes
 		
         private function onAddedToStage():void
         {
-           
+
+			
 			//Game.assets.enqueue("../../assets/textures/ship_rod/texture.png");
 			instance = this;
 		
 			factory = new StarlingFactory();
 
-			//
 			var skeletonData:SkeletonData = XMLDataParser.parseSkeletonData(XML(new SkeletonXMLData()));
 			factory.addSkeletonData(skeletonData);
 		
