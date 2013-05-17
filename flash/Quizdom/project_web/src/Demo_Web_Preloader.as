@@ -32,7 +32,7 @@ package
         {
             stage.scaleMode = StageScaleMode.SHOW_ALL;
             stage.align = StageAlign.TOP_LEFT;
-            
+            // Load XML here. On complete continue..
 			addEventListener(Event.ENTER_FRAME, onEnterFrame);
             removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
