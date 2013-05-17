@@ -13,3 +13,4 @@ obj/
 /Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.fla
 /Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.swc
 /Dynamic-Texture-Atlas-Generator-master/sample/lib/ship.swf
+*.lxml
