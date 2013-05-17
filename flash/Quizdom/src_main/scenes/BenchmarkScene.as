@@ -25,7 +25,7 @@ package scenes
         
         public function BenchmarkScene()
         {
-            super();
+           
             
             // the container will hold all test objects
             mContainer = new Sprite();

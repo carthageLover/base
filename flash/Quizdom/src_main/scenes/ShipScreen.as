@@ -31,8 +31,6 @@ package scenes
 
     public class ShipScreen extends Scene
     {
-		
-		
 		[Embed(source = "../../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 		public static const SkeletonXMLData:Class;
  
@@ -41,23 +39,16 @@ package scenes
 	
 		//[Embed(source = "../../assets/textures/1x/ship_rod/texture.png")]
 		//public static const TextureData:Class;
-		
-		[Embed(source="../../assets_system/quizdomBack2.jpg")]
-		private var Background:Class;
-
-
 	   
 		private var mMovie:MovieClip;
-		private var barco:Sprite;
-		
+		private var barco:Sprite;	
 		protected var brawler:SpriterClip;
 		protected var spriterLoader:SpriterLoader;
 		
 		/** Current date. */
 		private var _currentDate:Date;
 		
-		private var image2:Image;
-		
+		private var image2:Image;	
 		private var i:int = 0;
 		
 		public static var instance:ShipScreen;
@@ -69,14 +60,13 @@ package scenes
         
 		public function ShipScreen() {	
 			
-			var bgTexture:Texture = Texture.fromBitmap(new Background());
-			addChild(new Image(bgTexture));
+			super("quizdomBack2");
 			
-			mBackButton = new Button(Game.assets.getTexture("button_back"), "Back");
+			/*mBackButton = new Button(Game.assets.getTexture("button_back"), "Back");
             mBackButton.x = Constants.CenterX - mBackButton.width / 2;
             mBackButton.y = Constants.GameHeight - mBackButton.height + 1;
             mBackButton.name = "backButton";
-            addChild(mBackButton);
+            addChild(mBackButton);*/
 			
 			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 		}
@@ -91,8 +81,6 @@ package scenes
 		
         private function onAddedToStage():void
         {
-
-			
 			//Game.assets.enqueue("../../assets/textures/ship_rod/texture.png");
 			instance = this;
 		
@@ -100,7 +88,6 @@ package scenes
 
 			var skeletonData:SkeletonData = XMLDataParser.parseSkeletonData(XML(new SkeletonXMLData()));
 			factory.addSkeletonData(skeletonData);
-		
 			
 			var texture:Texture = Game.assets.getTexture("texture");
 			var textureAtlas:StarlingTextureAtlas = new StarlingTextureAtlas(texture, XML(new TextureXMLData()));
@@ -127,8 +114,8 @@ package scenes
 		{
 			_currentDate = new Date();
 			armatureClip.y = 10 + (Math.cos(_currentDate.getTime() * 0.002)) * 15;
-		//	playBtn.y = 340 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
-		//	aboutBtn.y = 460 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
+			//	playBtn.y = 340 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
+			//	aboutBtn.y = 460 + (Math.cos(_currentDate.getTime() * 0.002)) * 10;
 		}
 		
 		private function onKeyEventHandler(e:KeyboardEvent):void {
@@ -147,17 +134,14 @@ package scenes
 					armature.animation.gotoAndPlay("cannon4");
 					break;	
 				case 101 :
-					trace("entro 101");
 					armature.animation.gotoAndPlay("cannon5");
 					break;	
 				case 90 :
 					
 					trace("90!!!!!!");
-					
 					var _armR:Bone = armature.getBone("ship_3");
 				
-					if (_armR != null)
-					{
+					if (_armR != null){
 					var tween_bone:Tween;
 					tween_bone = new Tween(_armR.origin, 1, Transitions.EASE_OUT);
 					tween_bone.animate("x", _armR.origin.x -50);
@@ -181,8 +165,8 @@ package scenes
 					_armR = armature.getBone("ship_4"); 
 					_armR.origin.x = 500;
 					
-					//tween_bone:Tween;
-					/*trace("start x=" +_armR.origin.x );
+					/*tween_bone:Tween;
+					trace("start x=" +_armR.origin.x );
 					if (_armR != null)
 					{
 					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
@@ -198,7 +182,7 @@ package scenes
 						tween_bone.animate("x", _armR.origin.x + 400);
 					    tween_bone.animate("y", _armR.origin.y + 400);
 					    tween_bone.animate("rotation", deg2rad(360));
-						};*/
+						};
 						
 					/*var tween_bone2:Tween = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
 					tween_bone2.animate("x", _armR.origin.x + 600);
@@ -208,9 +192,9 @@ package scenes
 					tween_bone2.delay = tween_bone.totalTime-0.8;
 					
 					Starling.juggler.add(tween_bone);
-					Starling.juggler.add(tween_bone2);*/
+					Starling.juggler.add(tween_bone2);
 					
-					//}
+					//}*/
 					break;	
 				case 67 :	
 					trace("67!!!!!!");
@@ -219,19 +203,19 @@ package scenes
 					//tween_bone:Tween;
 					if (_armR != null)
 					{
-					tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
-					tween_bone.animate("x", _armR.origin.x + 800);
-					tween_bone.animate("y", _armR.origin.y - 200);
-					tween_bone.animate("rotation", deg2rad(360));
-					
-					//tween_bone.fadeTo(1);   
-					tween_bone.onComplete = function():void { 
-						trace("complete");
-						armature.removeBoneByName("ship_5");
-
-						};
+						tween_bone = new Tween(_armR.origin, 1.5, Transitions.EASE_OUT);
+						tween_bone.animate("x", _armR.origin.x + 800);
+						tween_bone.animate("y", _armR.origin.y - 200);
+						tween_bone.animate("rotation", deg2rad(360));
 						
-					Starling.juggler.add(tween_bone);
+						//tween_bone.fadeTo(1);   
+						tween_bone.onComplete = function():void { 
+							trace("complete");
+							armature.removeBoneByName("ship_5");
+
+							};
+							
+						Starling.juggler.add(tween_bone);
 					}
 					break;		
 			}

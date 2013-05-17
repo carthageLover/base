@@ -33,24 +33,12 @@ package
         [Embed(source="../../assets/textures/5x/ship.png")]
         public static const ship:Class;
 
-	/*	[Embed(source="../../assets/textures/6x/bandera.xml", mimeType="application/octet-stream")]
-        public static const bandera_xml:Class;
-        
-        [Embed(source="../../assets/textures/6x/bandera.png")]
-        public static const bandera:Class;
-		
-
-*/
-	
-	//	[Embed(source = "../../assets/textures/ship_rod/texture.png")]
-	//	public static const TextureData:Class;
-
-		
-		// Compressed textures
-        
-     //  [Embed(source = "../../assets/textures/1x/compressed_texture.atf", mimeType="application/octet-stream")]
-      // public static const compressed_texture:Class;
       
+		[Embed(source="../../assets_system/quizdomBack2.jpg")]
+		public static const quizdomBack2:Class;	  
+		
+		[Embed(source="../../assets_system/quizdomBack3.jpg")]
+		public static const quizdomBack3:Class;
 
         // Bitmap Fonts
         

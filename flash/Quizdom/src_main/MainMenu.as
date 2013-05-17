@@ -32,8 +32,8 @@ public class MainMenu extends Sprite
 	
 	private function init():void
 	{
-		var logo:Image = new Image(Game.assets.getTexture("logo"));
-		addChild(logo);
+		//var logo:Image = new Image(Game.assets.getTexture("logo"));
+		//addChild(logo);
 		
 		var scenesToCreate:Array = [["ShipTexture", ShipScreen],["Multitouch", TouchScene], ["TextFields", TextScene], ["Animations", AnimationScene], ["Custom hit-test", CustomHitTestScene], ["Movie Clip", MovieScene], ["Filters", FilterScene], ["Blend Modes", BlendModeScene], ["Render Texture", RenderTextureScene], ["Benchmark", BenchmarkScene]];
 		
@@ -46,7 +46,7 @@ public class MainMenu extends Sprite
 			var sceneClass:Class = sceneToCreate[1];
 			
 			var button:Button = new Button(buttonTexture, sceneTitle);
-			button.x = count % 2 == 0 ? 28 : 167;
+			button.x = count % 2 == 0 ? 800 : 860;
 			button.y = 160 + int(count / 2) * 52;
 			button.name = getQualifiedClassName(sceneClass);
 			addChild(button);

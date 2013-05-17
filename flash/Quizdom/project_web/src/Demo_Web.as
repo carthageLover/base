@@ -63,8 +63,6 @@ public class Demo_Web extends Sprite
 		assets.enqueue("../../assets/textures/ship_rod/texture.png");
      	assets.enqueue(EmbeddedAssets);
 		
-		
-		
 		// background texture is embedded, because we need it right away!
 		var bgTexture:Texture = Texture.fromBitmap(new Background());
 		
