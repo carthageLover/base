@@ -24,7 +24,7 @@ public class RenderTextureScene extends Scene
 	public function RenderTextureScene()
 	{
 		mColors = new Dictionary();
-		mRenderTexture = new RenderTexture(320, 435);
+		mRenderTexture = new RenderTexture(760, 600);
 		
 		mCanvas = new Image(mRenderTexture);
 		mCanvas.addEventListener(TouchEvent.TOUCH, onTouch);

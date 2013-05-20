@@ -37,10 +37,10 @@ package scenes
 
     public class ShipScreen extends Scene
     {
-		[Embed(source = "../../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
+		[Embed(source = "../assets/textures/ship_rod/skeleton.xml", mimeType = "application/octet-stream")]
 		public static const SkeletonXMLData:Class;
  
-		[Embed(source = "../../assets/textures/ship_rod/texture.xml", mimeType = "application/octet-stream")]
+		[Embed(source = "../assets/textures/ship_rod/texture.xml", mimeType = "application/octet-stream")]
 		public static const TextureXMLData:Class;
 	
 		//[Embed(source = "../../assets/textures/1x/ship_rod/texture.png")]
