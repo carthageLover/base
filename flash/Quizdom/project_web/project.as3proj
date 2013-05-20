@@ -16,8 +16,7 @@
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
-    <class path="..\src_main" />
-    <class path="..\src_lib" />
+    <class path="src_lib" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -57,6 +56,9 @@
     <element path="..\src_lib\libs\as3-signals-v0.8.swc" />
     <element path="..\src_lib\libs\analytics.swc" />
     <element path="..\src_lib\libs\greensock.swc" />
+    <element path="src_lib\libs\analytics.swc" />
+    <element path="src_lib\libs\as3-signals-v0.8.swc" />
+    <element path="src_lib\libs\greensock.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>

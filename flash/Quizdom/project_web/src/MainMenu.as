@@ -46,7 +46,7 @@ public class MainMenu extends Sprite
 			var sceneClass:Class = sceneToCreate[1];
 			
 			var button:Button = new Button(buttonTexture, sceneTitle);
-			button.x = count % 2 == 0 ? 800 : 860;
+			button.x = count % 2 == 0 ? 67 : 250;
 			button.y = 160 + int(count / 2) * 52;
 			button.name = getQualifiedClassName(sceneClass);
 			addChild(button);

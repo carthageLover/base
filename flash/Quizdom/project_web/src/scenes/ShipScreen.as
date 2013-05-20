@@ -1,6 +1,7 @@
 package scenes
 {
 	import flash.geom.Point;
+	import flash.media.Sound;
 	import flashx.textLayout.formats.Float;
 	import starling.animation.Transitions;
 	import starling.animation.Tween;
@@ -10,11 +11,16 @@ package scenes
 	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.filters.BlurFilter;
+	import starling.filters.ColorMatrixFilter;
+	import starling.text.BitmapFont;
     import starling.text.TextField;
     import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
 	import starling.display.BlendMode;
+	import starling.utils.Color;
 	import treefortress.spriter.AnimationSet;
+	import utils.AnimButton;
 	
 	import treefortress.spriter.SpriterClip;
 	import treefortress.spriter.SpriterLoader;
@@ -57,7 +63,11 @@ package scenes
 		private var armature:Armature;
 		private var armatureClip:Sprite;
 		private var mBackButton:Button;
-        
+        private var offset:int = 10;
+        private var ttFont:String = "Ubuntu";
+        private var ttFontSize:int = 19; 
+		private var mFilterInfos:Array;
+		private var stepSound:Sound;
 		public function ShipScreen() {	
 			
 			super("quizdomBack2");
@@ -81,6 +91,15 @@ package scenes
 		
         private function onAddedToStage():void
         {
+			
+			 var bmpFontTF:TextField = new TextField(500, 150, 
+                "Vengo, del barrio de boedoooooooooo", "font");
+            bmpFontTF.fontSize = BitmapFont.NATIVE_SIZE; // the native bitmap font size, no scaling
+            bmpFontTF.color = Color.BLUE; // use white to use the texture as it is (no tinting)
+            bmpFontTF.x = offset +100;
+            bmpFontTF.y = 30 + offset;
+            addChild(bmpFontTF);
+			
 			//Game.assets.enqueue("../../assets/textures/ship_rod/texture.png");
 			instance = this;
 		
@@ -103,12 +122,51 @@ package scenes
 			WorldClock.clock.add(armature);
 			addEventListener(EnterFrameEvent.ENTER_FRAME, onEnterFrameHandler);
 			
+			var animBtn:AnimButton = new AnimButton();
+			animBtn.x = 500;
+			animBtn.y = 400;
+			this.addChild(animBtn);
+			animBtn.name = "backButton";
+			//animBtn.addEventListener(Event.TRIGGERED, onButtonClick);
+			
+			
+			var bmpFontTF1:TextField = new TextField(500, 150, 
+                "barrioooo, de murga y carnavaaaaaal", "font");
+            bmpFontTF1.fontSize = BitmapFont.NATIVE_SIZE; // the native bitmap font size, no scaling
+           // bmpFontTF1.color = Color.WHITE; // use white to use the texture as it is (no tinting)
+            bmpFontTF1.x = offset +130;
+            bmpFontTF1.y = 80 + offset;
+			bmpFontTF1.color = Color.RED;
+			
+            addChild(bmpFontTF1);
+			
+		    
+			mFilterInfos = [
+                ["Identity", new ColorMatrixFilter()],
+                ["Blur", new BlurFilter()],
+                ["Drop Shadow", BlurFilter.createDropShadow()],
+                ["Glow", BlurFilter.createGlow()]
+            ];
+			
+			//var filterInfo:Array = mFilterInfos.shift() as Array;
+           // mFilterInfos.push(filterInfo);
+			
+			bmpFontTF.filter =  mFilterInfos[2][1];
+			bmpFontTF1.filter =  mFilterInfos[3][1];
+			
+			/*var hueFilter:ColorMatrixFilter = new ColorMatrixFilter();
+            hueFilter.adjustHue(1);
+            mFilterInfos.push(["Hue", hueFilter]);;*/
+			stepSound = Game.assets.getSound("vengo");
+			stepSound.play();
+			
 			this.addEventListener(Event.ENTER_FRAME, floatingAnimation);
 			this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyEventHandler);
 			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyEventHandler);
 			//Starling.juggler.add(mMovie);
         }
+		
 		
 		private function floatingAnimation(event:Event):void
 		{

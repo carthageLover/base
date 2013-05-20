@@ -19,8 +19,8 @@ import utils.ProgressBar;
 public class Game extends Sprite
 {
 	// Embed the Ubuntu Font. Beware: the 'embedAsCFF'-part IS REQUIRED!!!
-	[Embed(source="../assets/fonts/Ubuntu-R.ttf",embedAsCFF="false",fontFamily="Ubuntu")]
-	private static const UbuntuRegular:Class;
+	//[Embed(source="../assets/fonts/Ubuntu-R.ttf",embedAsCFF="false",fontFamily="Ubuntu")]
+	//private static const UbuntuRegular:Class;
 	
 	private var mLoadingProgress:ProgressBar;
 	private var mMainMenu:MainMenu;

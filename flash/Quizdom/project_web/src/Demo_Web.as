@@ -15,7 +15,7 @@ import starling.utils.AssetManager;
 
 public class Demo_Web extends Sprite
 {
-	[Embed(source="../../assets_system/quizdomBack.jpg")]
+	[Embed(source="../assets_system/quizdomBack.jpg")]
 	private var Background:Class;
 	
 	private var mStarling:Starling;
@@ -60,7 +60,7 @@ public class Demo_Web extends Sprite
 		
 		
 		assets.verbose = Capabilities.isDebugger;
-		assets.enqueue("../../assets/textures/ship_rod/texture.png");
+		assets.enqueue("../assets/textures/ship_rod/texture.png");
      	assets.enqueue(EmbeddedAssets);
 		
 		// background texture is embedded, because we need it right away!
